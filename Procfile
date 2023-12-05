@@ -1,0 +1,1 @@
+web: gunicorn emerg3d.wsgi
