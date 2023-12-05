@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['emerg3d.herokuapp.com',
+ALLOWED_HOSTS = ['emerg3d-426f1031de84.herokuapp.com',
                  '8000-modonohoe-emerg3d-xxmc8jkn3t.us2.codeanyapp.com']
 
 
