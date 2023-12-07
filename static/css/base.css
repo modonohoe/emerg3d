@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Tilt+Prism&display=swap');
+
+:root {
+    --primary-color: #000000;
+    /* Black */
+    --secondary-color: #463f4f;
+    /* Gray */
+    --accent-color: #eb1f2a;
+    /* Red */
+    --text-color: #fbfbfb;
+    /* White */
+    --link-color: #fde3a7;
+    /* Cream */
+}
+
+/* special custom font */
+@font-face {
+    font-family: 'Horta';
+    src: url('/static/fonts/horta.otf') format('opentype');
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Horta', sans-serif;
+    font-weight: 700;
+}
+
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Nova Square', sans-serif;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Set width to 100% */
+    margin: auto;
+    min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
