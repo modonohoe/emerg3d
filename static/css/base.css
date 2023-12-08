@@ -166,15 +166,6 @@ footer a {
     box-shadow: 0 0 10px rgba(250, 249, 246, 0.7);
 } */
 
-.glyphicon {
-    padding: 1rem;
-    color: var(--link-color);
-}
-
-.glyphicon:hover {
-    color: #FAF9F6;
-}
-
 .mycarousel {
     max-height: 380px;
 }
