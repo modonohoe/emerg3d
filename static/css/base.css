@@ -19,6 +19,14 @@
     src: url('/static/fonts/horta.otf') format('opentype');
 }
 
+/* logo image size */
+
+#logo-image {
+    max-width: 85px;
+    max-height: 85px;
+
+}
+
 h1,
 h2,
 h3 {
@@ -34,8 +42,17 @@ body {
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
+    padding: 0.5rem 0 2rem;
     margin-bottom: 0;
     border-radius: 0;
+}
+
+.navbar-brand {
+    padding: 0 0 2rem 0;
+}
+
+.navbar-collapse {
+    padding: 1.5rem 0 0;
 }
 
 /* Add a gray background color and some padding to the footer */
@@ -44,11 +61,17 @@ footer {
     padding: 25px;
 }
 
+.mycarousel {
+    max-height: 380px;
+}
+
 .carousel-inner img {
     width: 100%;
     /* Set width to 100% */
     margin: auto;
+    padding-top: 2rem;
     min-height: 200px;
+    max-height: 380px;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */

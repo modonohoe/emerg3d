@@ -46,7 +46,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">EMERG3D</a>
+              <a class="navbar-brand" href="#"
+                ><img
+                  id="logo-image"
+                  src="{% static 'images/logo.png' %}"
+                  alt="Emerg3d logo"
+              /></a>
             </div>
           </div>
           <div class="col-sm-6">
@@ -74,7 +79,10 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image" />
+          <img
+            src="{% static 'images/hero-image-1-min.png' %}"
+            alt="3d printed mask costume"
+          />
           <div class="carousel-caption">
             <h3>Video of printing</h3>
             <p>Bring your projects to life</p>
@@ -82,10 +90,7 @@
         </div>
 
         <div class="item">
-          <img
-            src="https://placehold.it/1200x400?text=Another Image Maybe"
-            alt="Image"
-          />
+          <img src="{% static 'images/hero-image-2-min.png' %}" alt="Image" />
           <div class="carousel-caption">
             <h3>Video of cosplay costume</h3>
             <p>No project is too big or too small</p>
