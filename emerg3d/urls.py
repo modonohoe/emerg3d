@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 from landing_page.views import get_landing_page
 
 urlpatterns = [
