@@ -13,6 +13,13 @@
     /* Cream */
 }
 
+body {
+    font-family: 'Nova Square', sans-serif;
+    font-size: large;
+    background-color: var(--secondary-color);
+    padding-bottom: 100px;
+}
+
 /* special custom font */
 @font-face {
     font-family: 'Horta';
@@ -28,21 +35,25 @@
 }
 
 h1,
-h2,
-h3 {
+h2 {
     font-family: 'Horta', sans-serif;
     font-weight: 700;
+    background-color: var(--accent-color);
+    width: 100%;
+    padding: 1.5rem 1rem 1rem;
+    border: 3px solid black;
+    border-radius: 6px;
+    letter-spacing: 0.3rem;
 }
 
-
-body {
-    background-color: var(--primary-color);
-    font-family: 'Nova Square', sans-serif;
+a {
+    color: var(--link-color);
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
-    padding: 0.5rem 0 2rem;
+    background-color: #000000;
+    padding: 1rem 0 2rem;
     margin-bottom: 0;
     border-radius: 0;
 }
@@ -55,10 +66,29 @@ body {
     padding: 1.5rem 0 0;
 }
 
+.panel {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
 /* Add a gray background color and some padding to the footer */
 footer {
-    background-color: #f2f2f2;
+    background-color: var(--primary-color);
     padding: 25px;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+.btn-lg {
+    padding: 2rem;
+}
+
+.glyphicon {
+    padding: 1.5rem;
+    color: #fde3a7;
 }
 
 .mycarousel {
@@ -69,7 +99,6 @@ footer {
     width: 100%;
     /* Set width to 100% */
     margin: auto;
-    padding-top: 2rem;
     min-height: 200px;
     max-height: 380px;
 }

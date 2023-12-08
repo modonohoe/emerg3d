@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
-    <!-- fonts with preconnect for optimization -->
+    <!-- Google Fonts with preconnect for optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,7 +30,7 @@
   </head>
 
   <body>
-    <!-- bootstrap boilerplate adapted from w3schools -->
+    <!-- bootstrap navbar boilerplate adapted from w3schools -->
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="row">
@@ -75,49 +75,58 @@
       {% endblock content %}
     </main>
 
-    <h1>Apps inserted above</h1>
-
-    <!-- Page Content -->
-    <div class="container">
-      <h1>Contact Information</h1>
-      <p>Email: contact@example.com</p>
-      <p>Phone: (555) 123-4567</p>
+    <!-- contact information -->
+    <div class="panel panel-default text-center">
+      <div class="panel-body">
+        <h1>Contact Information</h1>
+        <p>For general queries.</p>
+        <p>
+          To enquire about a project, please open a
+          <a href="#">ticket</a> instead.
+        </p>
+        <p>Email: emerg3dprops@gmail.com</p>
+        <p>Phone: (+44) 123-4567</p>
+      </div>
     </div>
 
-    <footer class="container-fluid text-center">
+    <footer class="container-fluid text-center navbar-fixed-bottom">
       <a href="#myPage" title="To Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
       </a>
       <div class="container text-center">
-        <!-- Social Media Links -->
+        <!-- social media links -->
         <a
           href="#"
-          class="btn btn-social-icon btn-facebook"
+          class="btn-lg btn-social-icon btn-facebook"
           target="_blank"
           aria-label="Facebook"
           ><i class="fab fa-facebook"></i
         ></a>
         <a
           href="#"
-          class="btn btn-social-icon btn-twitter"
+          class="btn-lg btn-social-icon btn-twitter"
           target="_blank"
           aria-label="Twitter"
           ><i class="fab fa-twitter"></i
         ></a>
         <a
           href="#"
-          class="btn btn-social-icon btn-linkedin"
+          class="btn-lg btn-social-icon btn-linkedin"
           target="_blank"
           aria-label="LinkedIn"
           ><i class="fab fa-linkedin"></i
         ></a>
         <a
           href="#"
-          class="btn btn-social-icon btn-instagram"
+          class="btn-lg btn-social-icon btn-instagram"
           target="_blank"
           aria-label="Instagram"
           ><i class="fab fa-instagram"></i
         ></a>
+      </div>
+      <div class="container text-center">
+        <br />
+        <p>Follow Emerg3d Props on social media!</p>
       </div>
     </footer>
 
