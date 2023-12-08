@@ -1,9 +1,7 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-<div>
-    <p>Hello, World!</p>
-</div>
+<!-- carousel -->
+{% include 'hero.html' %}
 
-{% endblock %}
+<!-- description of Emerg3d -->
+{% include "landing_page/about.html" %} {% endblock %}
