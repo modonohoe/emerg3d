@@ -7,7 +7,7 @@
     /* Gray */
     --accent-color: #eb1f2a;
     /* Red */
-    --text-color: #fbfbfb;
+    --text-color: #FAF9F6;
     /* White */
     --link-color: #fde3a7;
     /* Cream */
@@ -52,7 +52,7 @@ a {
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
-    background-color: #000000;
+    background-color: var(--primary-color);
     padding: 1rem 0 2rem;
     margin-bottom: 0;
     border-radius: 0;
@@ -72,6 +72,21 @@ a {
     border: none;
 }
 
+.navbar .navbar-nav>li>a {
+    color: var(--text-color);
+}
+
+.navbar .navbar-nav>.active>a {
+    color: var(--link-color);
+}
+
+.navbar .navbar-nav>li>a:hover,
+.navbar .navbar-nav>li>a:focus,
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>.active>a:focus {
+    color: var(--accent-color);
+}
+
 /* Add a gray background color and some padding to the footer */
 footer {
     background-color: var(--primary-color);
@@ -88,7 +103,7 @@ footer a {
 
 .glyphicon {
     padding: 1.5rem;
-    color: #fde3a7;
+    color: var(--link-color);
 }
 
 .mycarousel {
