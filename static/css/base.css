@@ -130,13 +130,12 @@ footer {
     bottom: 0;
     left: 0;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    padding: 0;
+    padding-bottom: 2rem;
     margin-bottom: 0;
 }
 
 footer div {
     padding: 1rem;
-    margin-bottom: 1rem;
 }
 
 footer h3 {
@@ -150,7 +149,7 @@ footer a {
 .btn-lg {
     color: var(--accent-color);
     padding: 1.5rem;
-    margin: 1rem;
+    margin: 2rem;
     transition: box-shadow 0.3s ease;
     border-radius: 50px;
 }
@@ -159,12 +158,6 @@ footer a {
     color: var(--accent-color);
     box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
 }
-
-
-/* .btn-lg:focus {
-    color: var(--text-color);
-    box-shadow: 0 0 10px rgba(250, 249, 246, 0.7);
-} */
 
 .mycarousel {
     max-height: 380px;
