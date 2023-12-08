@@ -44,12 +44,13 @@ h1,
 h2 {
     font-family: 'Horta', sans-serif;
     font-weight: 700;
-    background-color: var(--accent-color);
+    /* background-color: var(--accent-color); */
+    background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
     width: 100%;
-    padding: 1.5rem 1rem 1rem;
+    padding: 1.5rem 1rem;
     border: 3px solid black;
     border-radius: 6px;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.4rem;
 }
 
 a {
