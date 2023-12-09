@@ -27,7 +27,7 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 * [Features](#features) ✨
   * [Current Features](#current-features)
   * [Future Features](#future-features)
-* [Technologies](#technologies)
+* [Technologies](#technologies) 🌐
   * [Languages](#languages)
   * [Database](#database)
   * [Frameworks](#frameworks)
@@ -69,7 +69,19 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 
 #### Color Scheme
 
+
 #### Fonts
+
+<details>
+The headline font '<summary>Horta</summary>' is used in the company logo and is an open license font.
+> "Inspired by the title cards of the original Star Trek television series—even supports Klingon!" 
+> Source: [FontLibrary.org](https://fontlibrary.org/en/font/horta)
+</details>
+
+<details>
+The body font '<summary>Nova Square</summary>' was chosen for its striking simplicity. It was created by the famous stonemason [Wojciech Kalinowski](http://www.identifont.com/show?3DQU)
+> "In 1995 he began to design his own typefaces for carving in stone, like Medieval Sharp, Gothica, and Modern Antiqua. In second half of the 2000's he became interested in digital typefaces, and began to digitise his old typefaces and design new ones. He is a contributor to the Open Font Library.
+</details>
 
 #### Photopgraphy
 
