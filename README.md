@@ -68,9 +68,12 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 #### Surface Plane
 
 #### Color Scheme
+
 <details>
 <summary>Basic Palette</summary>
+
 Hexadecimal codes that correspond to the company's logo were provided by the client. It was decided 'off-white' would replace the standard white color for text as it creates less of a glare while still maintaining sufficient contrast for accessibility.
+
 
 ![logo-colors](documentation/readme/logo-colors.png)
 
@@ -103,7 +106,7 @@ The body font 'Nova Square' was chosen for its striking simplicity. It was creat
 </details>
 
 Sample of Nova Square font:
-![Nova Square sample](documentation/readme/nova-font.png
+![Nova Square sample](documentation/readme/nova-font.png)
 
 #### Photography
 
