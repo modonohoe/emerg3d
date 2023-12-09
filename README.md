@@ -74,7 +74,6 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 
 Hexadecimal codes that correspond to the company's logo were provided by the client. It was decided 'off-white' would replace the standard white color for text as it creates less of a glare while still maintaining sufficient contrast for accessibility.
 
-
 ![logo-colors](documentation/readme/logo-colors.png)
 
 The colors were then imported into the base.css page and assigned as root colors for ease of use (and all elements using the tags can be instantly amended site-wide in future if the logo changes).
@@ -103,10 +102,12 @@ Sample of Horta font:
 The body font 'Nova Square' was chosen for its striking simplicity. It was created by the famous stonemason [Wojciech Kalinowski](http://www.identifont.com/show?3DQU)
 
 > "In 1995 he began to design his own typefaces for carving in stone, like Medieval Sharp, Gothica, and Modern Antiqua. In second half of the 2000's he became interested in digital typefaces, and began to digitise his old typefaces and design new ones. He is a contributor to the Open Font Library."
-</details>
 
 Sample of Nova Square font:
 ![Nova Square sample](documentation/readme/nova-font.png)
+
+
+</details>
 
 #### Photography
 
@@ -126,7 +127,7 @@ Sample of Nova Square font:
 
 ---
 
-## Technologies
+## Technologies 🌐
 
 ### Languages
 
