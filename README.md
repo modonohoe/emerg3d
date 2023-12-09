@@ -1,6 +1,6 @@
 # EMERG3D Props
 
-![EMERG3D logo](static/images/logo.png){: width="50%"}
+![EMERG3D website preview](documentation/readme/am-i-responsive.png)
 
 EMERG3D Props is a 3D printing business. This is their website (1st itertion made for my Portfolio Project 4 for Code Institute)
 
@@ -8,7 +8,7 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 
 ## Contents
 
-* [User Experience](#user-experience)
+* [User Experience](#user-experience) 🪄
   * [Strategy Plane](#strategy-plane)
     * [Project Goals](#project-goals)
   * [Scope Plane](#scope-plane)
@@ -19,26 +19,25 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
   * [Skeleton Plane](#skeleton-plane)
     * [Wireframes](#wireframes)
   * [Surface Plane](#surface-plane)
-    * [Colour Scheme](#colour-scheme)
-    * [Typography](#typography)
-    * [Imagery](#imagery)
-    * [Base Mockup](#base-mockup)
-* [Agile Methodology](#agile-methodology)
-* [Features](#features)
+    * [Color Scheme](#color-scheme)
+    * [Fonts](#tfonts)
+    * [Photopgraphy](#photography)
+* [Agile Methodology](#agile-methodology) 🗃️
+* [Features](#features) ✨
   * [Current Features](#current-features)
   * [Future Features](#future-features)
-* [Technologies Used](#technologies-used)
-  * [Languages Used](#languages-used)
-  * [Database Used](#database-used)
-  * [Frameworks Used](#frameworks-used)
-  * [Libraries & Packages Used](#libraries--packages-used)
-  * [Programs Used](#programs-used)
+* [Technologies](#technologies)
+  * [Languages](#languages)
+  * [Database](#database)
+  * [Frameworks](#frameworks)
+  * [Libraries & Packages](#libraries--packages)
+  * [Programs](#programs)
   * [Stripe](#stripe)
-* [Testing](#testing)
-* [Bugs and Fixes](#bugs-and-fixes)
-* [Deployment](#deployment)
-* [Credits](#credits)
-  * [Code Used](#code-used)
+* [Testing](#testing) 📝
+* [Bugs and Fixes](#bugs-and-fixes) 🛠️
+* [Deployment](#deployment) 🖥️
+* [Credits](#credits) 💐
+  * [Code](#code)
   * [Content](#content)
   * [Media](#media)
   * [Acknowledgments](#acknowledgments)
