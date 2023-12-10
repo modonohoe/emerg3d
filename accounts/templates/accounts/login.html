@@ -1,11 +1,20 @@
 {% extends "base.html" %} {% load static %} {% block title %}Login{% endblock %}
-{% load crispy_form_tags %} {% block content %}
+{% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
 <form method="post">
-  {% csrf_token %}{{form|cripsy}}
-  <p>
-    Welcome to EMERG3D Props! Log in to your account below or
-    <a href="/sign-up">create an account</a> to get started.
-  </p>
-  <button type="submit" class="btn btn-success">Login</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h3>Welcome to EMERG3D Props!</h3>
+        <p>
+          Log in to your account below or
+          <a href="/sign-up">create an account</a> to get started.
+        </p>
+        {% csrf_token %} {{ form|crispy }}
+        <br />
+        <button type="submit" class="btn btn-success btn-block">Login</button>
+        <br />
+      </div>
+    </div>
+  </div>
 </form>
 {% endblock %}
