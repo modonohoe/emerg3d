@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     # My Apps
     'landing_page',
-    'account',
+    'accounts',
     'blog',
 ]
 

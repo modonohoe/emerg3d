@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% load static %} {% block title %}Login{% endblock %}
+{% load crispy_form_tags %} {% block content %}
+<form method="post">
+  {% csrf_token %}{{form|cripsy}}
+  <p>
+    Welcome to EMERG3D Props! Log in to your account below or
+    <a href="/sign-up">create an account</a> to get started.
+  </p>
+  <button type="submit" class="btn btn-success">Login</button>
+</form>
+{% endblock %}
