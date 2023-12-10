@@ -32,6 +32,11 @@ DEBUG = True
 ALLOWED_HOSTS = ['emerg3d-426f1031de84.herokuapp.com',
                  '8000-modonohoe-emerg3d-xxmc8jkn3t.us2.codeanyapp.com']
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
 
@@ -92,10 +97,6 @@ WSGI_APPLICATION = 'emerg3d.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -145,5 +146,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
