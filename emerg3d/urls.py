@@ -18,12 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from landing_page.views import get_landing_page
+from accounts.views import sign_up
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_landing_page, name="get_landing_page"),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('signin/', LoginView.as_view(template_name="accounts/login.html"), name='signin'),
-    # path('signup')
-    # path('signout/', LogoutView.as_view(template_name="accounts/logout.html"), name='signout')
+    path('accounts/', include('accounts.urls')),
 ]
