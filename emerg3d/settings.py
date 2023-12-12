@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'landing_page',
     'accounts',
     'blog',
+    'shop',
 ]
 
 MIDDLEWARE = [
