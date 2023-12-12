@@ -16,8 +16,7 @@ class Product(models.Model):
     price = models.DecimalField(default=0, decimal_places=2, max_digits=6)
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
-    description = models.CharField(
-        max_length=300, default='', blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     image = CloudinaryField('image', blank=True, null=True)
     image_alt_text = models.CharField(max_length=255, blank=True)
 
