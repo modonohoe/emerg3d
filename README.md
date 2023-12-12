@@ -33,7 +33,6 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
   * [Frameworks](#frameworks)
   * [Libraries & Packages](#libraries--packages)
   * [Programs](#programs)
-  * [Stripe](#stripe)
 * [Testing](#testing) 📝
 * [Bugs and Fixes](#bugs-and-fixes) 🛠️
 * [Deployment](#deployment) 🖥️
@@ -137,8 +136,6 @@ Sample of Nova Square font:
 ### Libraries & Packages
 
 ### Programs
-
-### Stripe
 
 ---
 
