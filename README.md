@@ -145,9 +145,8 @@ Sample of Nova Square font:
 
 ## Bugs and Fixes 🛠️
 
-* <details><summary>
-Bug: Preview on Port 8000 loading as 'Dangerous Website'</summary>
-
+* **Bug:** Preview on Port 8000 loading as 'Dangerous Website'
+<details>
 | Preview Bug | Details |
 | -------- | -------- |
 | Description: | When loading a preview of my website on Port 8000 after deploying my site to Heroku, a warning page appeared in the browser blocking entry to the site |
@@ -162,23 +161,21 @@ Bug: Preview on Port 8000 loading as 'Dangerous Website'</summary>
 | Status: | Resolved ✅ |
 </details>
 
-
-* <details><summary>
-Bug: CSS path error</summary>
-
+* **Bug:** CSS path error
+<details>
 | Path Bug | Details |
 | -------- | -------- |
 | Description: | CSS file did not load custom styling to Bootstrap template |
 | Steps to reproduce: | 1. Create style.css in folder CSS in static files<br>2. Preview site on Port 8000 |
-| Expected behaviour: | I expected to see the the curved container edges removed and custom color styling applied to my Bootstrap template. |
+| Expected behaviour: | I expected to see the curved container edges removed and custom color styling applied to my Bootstrap template. |
 | Actual behaviour: | Chrome Developer Tools revealed the CSS was not loading succesfully ![Screenshot of path bug](documentation/readme/bug-css-path.png) |
 | Environment: | Operating system: Windows 11<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | Incorrect path or unknown error |
 | Additional information: | n/a |
-| Steps to fix: | 1. Checked the path to my CSS file and this looked in order.<br>2. After troubleshooting, I contacted Tutor Support who supplied me with the following screenshot:<br> ![Screenshot of path error](documentation/readme/bug-css-path2.png)<br>The path appeared to me to be within the folder but as I had never encountered this error before, I mistook the indentation for the file being within the folder.
+| Steps to fix: | 1. Checked the path to my CSS file and this looked in order.<br>2. After troubleshooting, I contacted Tutor Support who supplied me with the following screenshot:<br>![Screenshot of path error](documentation/readme/bug-css-path2.png)<br>The path appeared to me to be within the folder but as I had never encountered this error before, I mistook the indentation for the file being within the folder.
 | References: | n/a |
 | Status: | Resolved ✅ |
-</summary>
+</details>
 
 <!-- 
 ![f](documentation/readme)
