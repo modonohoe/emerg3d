@@ -145,6 +145,40 @@ Sample of Nova Square font:
 
 ## Bugs and Fixes 🛠️
 
+* **Bug:** Preview on Port 8000 loading as 'Dangerous Website'
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | When loading a preview of my website on Port8000 after deploying my site to Heroku, a warning page appeared in the browser blocking entry to the site |
+| Steps to reproduce: | 1. Deploy Django website to Heroku.<br>2. Use 'python3 manage.py runserver' command.<br>3. View port  |
+| Expected behaviour: | I expected to see the 'Django launched successfully' page which I had seen before deployment to Heroku |
+| Actual behaviour: | ![Screenshot of preview bug](documentation/readme/bug-dangerous-site.png) |
+| Environment: | Operating system: Windows 11<br>Browser: Chrome Version 120.0.6099.71 |
+| Possible causes: | The issue arose once Heroku successfully deployed the site. |
+| Additional information: | n/a |
+| Steps to fix: | 1. Changing permissions to allow access in the chrome settings ❌<br>2. Contacted Tutor Support who deduced the issue was because I did not have any views in place yet. This was confirmed when we tried to view the admin app while loaded without issue in Port8000 |
+| References: | n/a |
+
+
+<!-- 
+![f](documentation/readme)
+![f](documentation/readme)
+![f](documentation/readme)
+![f](documentation/readme)
+![f](documentation/readme)
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: |  |
+| Steps to reproduce: |  |
+| Expected behaviour: |  |
+| Actual behaviour: |  |
+| Possible causes: |  |
+| Additional information: |  |
+| Steps to fix: |  |
+| References: |  | -->
+
+
 ---
 
 ## Deployment 🖥️
