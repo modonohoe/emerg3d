@@ -154,7 +154,7 @@ Sample of Nova Square font:
 | Steps to reproduce: | 1. Deploy Django website to Heroku.<br>2. Use 'python3 manage.py runserver' command in the IDE terminal.<br>3. View Port 8000  |
 | Expected behaviour: | I expected to see the 'Django launched successfully' page which I had seen before deployment to Heroku |
 | Actual behaviour: | ![Screenshot of preview bug](documentation/readme/bug-dangerous-site.png) |
-| Environment: | Operating system: Windows 11<br>Browser: Chrome Version 120.0.6099.71 |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | The issue arose once Heroku successfully deployed the site. |
 | Additional information: | n/a |
 | Steps to fix: | 1. Changing permissions to allow access in the chrome settings ❌<br>2. Contacted Tutor Support who deduced the issue was because I did not have any views in place yet. This was confirmed when we tried to view the admin app which loaded without issue in Port 8000 |
@@ -172,7 +172,7 @@ Sample of Nova Square font:
 | Steps to reproduce: | 1. Create style.css in folder CSS in static files<br>2. Preview site on Port 8000 |
 | Expected behaviour: | I expected to see the curved container edges removed and custom color styling applied to my Bootstrap template. |
 | Actual behaviour: | Chrome Developer Tools revealed the CSS was not loading succesfully ![Screenshot of path bug](documentation/readme/bug-css-path.png) |
-| Environment: | Operating system: Windows 11<br>Browser: Chrome Version 120.0.6099.71 |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | Incorrect path or unknown error |
 | Additional information: | n/a |
 | Steps to fix: | 1. Checked the path to my CSS file and this looked in order.<br>2. After troubleshooting, I contacted Tutor Support who supplied me with the following screenshot:<br>![Screenshot of path error](documentation/readme/bug-css-path2.png)<br>The path appeared to me to be within the folder but as I had never encountered this error before, I mistook the indentation for the file being within the folder.
@@ -190,18 +190,52 @@ Sample of Nova Square font:
 | Steps to reproduce: | 1. In the terminal use the command: 'python3 manage.py startapp home' |
 | Expected behaviour: | Creation of new app called 'home' |
 | Actual behaviour: | As python has a module named 'home' this is not permitted<br>![screenshot of terminal error](documentation/readme/bug-django-home.png) |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | Python permissions |
 | Additional information: | n/a |
 | Steps to fix: | I chose the name 'landing_page' which is inline with naming conventions. 'home_' was also considered. |
-| References: | (GitHub discussion on this topic)[<https://github.com/nephila/djangocms-installer/issues/359>] |
+| References: | [GitHub discussion on this topic](https://github.com/nephila/djangocms-installer/issues/359) |
 | Status: | Resolved ✅ |
 
 </details>
+
+<details>
+<summary> Bug: Migration conflict</summary>
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | When attempting to migrate my first app, an InconsistentMigrationError was raised `Migration admin.0001_initial is applied before its dependency accounts.0001_initial on database 'default'` |
+| Steps to reproduce: | 1. In the terminal use the command: 'python3 manage.py migrate accounts' |
+| Expected behaviour: | A successful migration of the accounts models to the ElephantSQL database. |
+| Actual behaviour: | ![Migration error](documentation/readme/bug-initial-migration.png) |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
+| Possible causes: | 1. I created an instance of a superuser which is part of the Admin site.<br>2. Default Django apps need to be migrated before any custom apps are created as they depend on these. |
+| Additional information: | n/a |
+| Steps to fix: | 1. Reset the database on ElephantSQL to remove the migration of accounts app.<br>2. Ran the command 'python3 manage.py migrate accounts' and the migration was successful |
+| References: | n/a |
+| Status: | Resolved ✅ |
+
+</details>
+
+<details>
+<summary> Bug: Code Anywhere reserved URL</summary>
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | When trying to preview my 'login.html', there was a 403 Error |
+| Steps to reproduce: | 1. Use 'python3 manage.py runserver' command in the IDE terminal.<br>2. View Port 8000 with app url + 'login/' |
+| Expected behaviour: | Get a preview of my login.html page |
+| Actual behaviour: | The URL of my website changed to a Code Anywhere one instead of a heroku URL while displayin a 403 error.<br>![URL bug Code Anywhere](documentation/readme/bug-code-anywhere-login.png) |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
+| Possible causes: | 'login' is a reserved URL for Code Anywhere |
+| Additional information: | n/a |
+| Steps to fix: | Rename 'login.html' to 'signin.html' |
+| References: | n/a |
+| Status: | Resolved ✅ |
+
+</details>
+
 <!-- 
-![f](documentation/readme)
-![f](documentation/readme)
-![f](documentation/readme)
-![f](documentation/readme)
 ![f](documentation/readme)
 
 <!-- | Preview Bug | Details |
@@ -210,6 +244,7 @@ Sample of Nova Square font:
 | Steps to reproduce: |  |
 | Expected behaviour: |  |
 | Actual behaviour: |  |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: |  |
 | Additional information: |  |
 | Steps to fix: |  |
