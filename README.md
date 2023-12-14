@@ -165,7 +165,7 @@ Sample of Nova Square font:
 
 <details>
 <summary>
-* **Bug:** Preview on Port 8000 loading as 'Dangerous Website'</summary>
+* **Bug:** CSS path error</summary>
 
 | Path Bug | Details |
 | -------- | -------- |
