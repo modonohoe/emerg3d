@@ -181,6 +181,22 @@ Sample of Nova Square font:
 
 </details>
 
+<details>
+<summary> Bug: Django App Name </summary>
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | When I tried to make an app called 'home', this was not permitted. |
+| Steps to reproduce: | 1. In the terminal use the command: 'python3 manage.py startapp home' |
+| Expected behaviour: | Creation of new app called 'home' |
+| Actual behaviour: | As python has a module named 'home' this is not permitted<br>![screenshot of terminal error](documentation/readme/bug-django-home.png) |
+| Possible causes: | Python permissions |
+| Additional information: | n/a |
+| Steps to fix: | I chose the name 'landing_page' which is inline with naming conventions. 'home_' was also considered. |
+| References: | (GitHub discussion on this topic)[<https://github.com/nephila/djangocms-installer/issues/359>] |
+| Status: | Resolved ✅ |
+
+</details>
 <!-- 
 ![f](documentation/readme)
 ![f](documentation/readme)
@@ -188,7 +204,7 @@ Sample of Nova Square font:
 ![f](documentation/readme)
 ![f](documentation/readme)
 
-| Preview Bug | Details |
+<!-- | Preview Bug | Details |
 | -------- | -------- |
 | Description: |  |
 | Steps to reproduce: |  |
@@ -197,7 +213,7 @@ Sample of Nova Square font:
 | Possible causes: |  |
 | Additional information: |  |
 | Steps to fix: |  |
-| References: |  | -->
+| References: |  |  -->
 
 ---
 
