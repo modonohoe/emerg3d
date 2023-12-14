@@ -157,7 +157,7 @@ Sample of Nova Square font:
 | Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | The issue arose once Heroku successfully deployed the site. |
 | Additional information: | n/a |
-| Steps to fix: | 1. Changing permissions to allow access in the chrome settings ❌<br>2. Contacted Tutor Support who deduced the issue was because I did not have any views in place yet. This was confirmed when we tried to view the admin app which loaded without issue in Port 8000 |
+| Steps to fix: | 1. Changing permissions to allow access in the chrome settings ❌<br>2. The issue was because I did not have any views in place yet. This was confirmed when we tried to view the admin app, which loaded without issue in Port 8000.|
 | References: | n/a |
 | Status: | Resolved ✅ |
 
@@ -225,7 +225,7 @@ Sample of Nova Square font:
 | Description: | When trying to preview my 'login.html', there was a 403 Error |
 | Steps to reproduce: | 1. Use 'python3 manage.py runserver' command in the IDE terminal.<br>2. View Port 8000 with app url + 'login/' |
 | Expected behaviour: | Get a preview of my login.html page |
-| Actual behaviour: | The URL of my website changed to a Code Anywhere one instead of a heroku URL while displayin a 403 error.<br>![URL bug Code Anywhere](documentation/readme/bug-code-anywhere-login.png) |
+| Actual behaviour: | The URL of my website changed to a Code Anywhere one instead of a heroku URL and displayed a 403 error.<br>![URL bug Code Anywhere](documentation/readme/bug-code-anywhere-login.png) |
 | Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
 | Possible causes: | 'login' is a reserved URL for Code Anywhere |
 | Additional information: | n/a |
