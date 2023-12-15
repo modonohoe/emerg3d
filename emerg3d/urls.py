@@ -25,4 +25,5 @@ urlpatterns = [
     path('', get_landing_page, name="get_landing_page"),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]

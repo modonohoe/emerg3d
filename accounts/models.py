@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class CustomUser(AbstractUser):
+    email = models.EmailField(unique=True)
     is_moderator = models.BooleanField(default=False)
 
     def __str__(self):
