@@ -13,6 +13,15 @@
     /* Cream */
 }
 
+.custom-text-white {
+    color: #FAF9F6;
+}
+
+.custom-text-smallprint {
+    color: #b0b0b0;
+    font-size: small;
+}
+
 body {
     font-family: 'Nova Square', sans-serif;
     font-size: large;
