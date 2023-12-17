@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['emerg3d-426f1031de84.herokuapp.com',
-                 '8000-modonohoe-emerg3d-xxmc8jkn3t.us2.codeanyapp.com']
+                 '8000-modonohoe-emerg3d-5mqdyubrxm.us2.codeanyapp.com']
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))

@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% load static %} {% block title %} Your Profile Page
+{% endblock %} {% include 'gradient.html' %} {% block content %}
+
+<h1>User Profile</h1>
+<p>Username: {{ username }}</p>
+<p>Email: {{ email }}</p>
+<p>Slug: {{ user_slug }}</p>
+
+{% endblock %}
