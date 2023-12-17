@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from landing_page.views import get_landing_page
 from accounts.views import sign_up
+from accounts.urls import urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),

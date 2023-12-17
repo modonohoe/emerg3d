@@ -17,6 +17,10 @@
     color: #FAF9F6;
 }
 
+.custom-text-black {
+    color: #000000;
+}
+
 .custom-text-smallprint {
     color: #b0b0b0;
     font-size: small;

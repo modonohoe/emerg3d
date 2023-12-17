@@ -82,7 +82,15 @@
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Enquire</a></li>
-                <li><a href="signin/">Login</a></li>
+                <li>
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'profile' slug=request.user.slug %}"
+                    >Profile</a
+                  >
+                  {% else %}
+                  <a href="{% url 'accounts:signin' %}">Login</a>
+                  {% endif %}
+                </li>
               </ul>
             </div>
           </div>

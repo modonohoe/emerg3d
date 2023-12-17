@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import CustomUser
 from django.contrib.auth import login
 from .forms import RegistrationForm
 from django.contrib.auth.decorators import login_required
@@ -11,7 +11,7 @@ def sign_up(request):
         if form.is_valid():
             custom_user = form.save()
             login(request, custom_user)
-            return redirect('/')
+            return redirect(reverse('profile', kwargs={'slug': custom_user.slug}))
     else:
         form = RegistrationForm()
 
@@ -21,14 +21,4 @@ def sign_up(request):
 @login_required
 def profile(request, slug):
     user = get_object_or_404(CustomUser, slug=slug)
-    # user attribute used in profile.html
-    username = user.username
-    email = user.email
-    user_slug = user.slugify
-
-    return render(request, 'profile.html', {
-        'user': user,
-        'username': username,
-        'email': email,
-        'user_slug': user_slug
-    })
+    return render(request, 'accounts/profile.html', {'user': user})
