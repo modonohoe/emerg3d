@@ -4,9 +4,8 @@ from .models import Product
 
 
 class ProductAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=SummernoteWidget())
+
     class Meta:
         model = Product
         fields = '__all__'
-        widgets = {
-            'description': SummernoteWidget(),
-        }

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product
+from .models import Product, Category
 from .forms import ProductAdminForm
 
 
@@ -7,3 +7,9 @@ from .forms import ProductAdminForm
 class ProductAdmin(admin.ModelAdmin):
     form = ProductAdminForm
     list_display = ('name', 'price', 'category')
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    pass
+

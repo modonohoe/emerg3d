@@ -8,7 +8,6 @@ urlpatterns = [
     path('signin/', LoginView.as_view(template_name="accounts/login.html"), name='signin'),
     path('signup/', sign_up, name='signup'),
     path('profile/<slug:slug>/', profile, name='profile'),
-    path('logout/', LogoutView.as_view(next_page='logout_confirmation'), name='logout'),
-    path('logout-confirmation/', TemplateView.as_view(
-        template_name='logout_confirmation.html'), name='logout_confirmation')
+    path('logout/', LogoutView.as_view(next_page='logout-confirmation'), name='logout'),
+    path('logout-confirmation/', TemplateView.as_view(template_name='logout_confirmation.html'), name='logout_confirmation')
 ]

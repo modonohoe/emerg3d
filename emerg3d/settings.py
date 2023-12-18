@@ -68,6 +68,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ROOT_URLCONF = 'emerg3d.urls'
 
 TEMPLATES = [
@@ -135,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #  trailing comma ensures that it's recognized as a tuple in Python
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -149,4 +151,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'accounts/signout/'
+LOGOUT_REDIRECT_URL = '/'
