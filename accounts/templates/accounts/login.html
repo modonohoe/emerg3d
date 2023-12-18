@@ -1,22 +1,22 @@
 {% extends "base.html" %} {% load static %} {% block title %}Login{% endblock %}
 {% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
 <form method="post">
-  <div class="container custom-text-white">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="text-center text-light">Welcome to EMERG3D Props</h2>
-        <p>
-          Great to have you here!<br />Log in to your account below or
-          <a href="/sign-up">create an account</a> to become a member.
-          Registered users can comment on posts, submit enquiries and even make
-          orders from our <a href="/shop">shop</a>.
-        </p>
-        {% csrf_token %} {{ form|crispy }}
-        <br />
-        <button type="submit" class="btn btn-success btn-block">Login</button>
-        <br />
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="custom-text-white text-center">Welcome to EMERG3D Props!</h2>
+                <p class="custom-text-white">
+                    Log in to your account below or
+                    <a href="/sign-up">create an account</a> to get started.
+                </p>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 white-labels">
+                {% csrf_token %} {{ form|crispy }}
+                <br />
+                <button type="submit" class="btn btn-success btn-block">Login</button>
+                <br />
+            </div>
+        </div>
     </div>
-  </div>
 </form>
 {% endblock %}

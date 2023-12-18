@@ -1,9 +1,26 @@
 {% extends "base.html" %} {% load static %} {% block title %} Your Profile Page
 {% endblock %} {% include 'gradient.html' %} {% block content %}
 
-<h1>User Profile</h1>
-<p>Username: {{ username }}</p>
-<p>Email: {{ email }}</p>
-<p>Slug: {{ user_slug }}</p>
+<script type="text/javascript">
+  function confirmLogout() {
+    return confirm("Are you sure you want to log out?");
+  }
+</script>
+
+<div class="container custom-text-white">
+  <div class="text-right">
+    <form action="{% url 'logout' %}" method="post" onsubmit="return confirmLogout()">
+        {% csrf_token %}
+        <input type="submit" value="Logout" class="btn btn-primary margin-around" />
+    </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>User Profile</h1>
+            <p>Username: {{ user.username }}</p>
+            <p>Email: {{ user.email }}</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

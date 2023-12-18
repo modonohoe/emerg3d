@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import CustomUser
-from django.contrib.auth import login
-from .forms import RegistrationForm
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth import login, authenticate
+from .forms import RegistrationForm, LoginForm
 from django.contrib.auth.decorators import login_required
+from .models import CustomUser
+from django.contrib import messages
 
 
 def sign_up(request):
@@ -16,6 +17,10 @@ def sign_up(request):
         form = RegistrationForm()
 
     return render(request, 'accounts/signup.html', {"form": form})
+
+
+def get_login_page(request):
+    return render(request, 'accounts/login.html')
 
 
 @login_required
