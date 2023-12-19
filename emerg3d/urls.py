@@ -22,6 +22,8 @@ from accounts.views import sign_up
 from accounts.urls import urlpatterns
 from blog.views import PostList, PostDetail
 from blog.urls import urlpatterns
+from shop.views import shop
+from shop.urls import urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('blog/', include('blog.urls')),
+    path('shop/', include('shop.urls')),
 ]
