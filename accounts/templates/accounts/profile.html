@@ -16,9 +16,27 @@
     </div>
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <h1>User Profile</h1>
+            <h2>User Profile</h2>
             <p>Username: {{ user.username }}</p>
             <p>Email: {{ user.email }}</p>
+        </div>
+    </div>
+
+    <div>
+        <!-- MY CART -->
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            {% if user_posts %}
+            <h2>My Posts</h2>
+            <ul>
+                {% for post in user_posts %}
+                <li>{{ post.title }} - {{ post.created_date }}</li>
+                <!-- You can add more details or a link to the post -->
+                {% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 </div>

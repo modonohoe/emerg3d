@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from .forms import RegistrationForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from .models import CustomUser
+from blog.models import Post
 from django.contrib import messages
 
 
@@ -26,4 +27,10 @@ def get_login_page(request):
 @login_required
 def profile(request, slug):
     user = get_object_or_404(CustomUser, slug=slug)
-    return render(request, 'accounts/profile.html', {'user': user})
+    user_posts = Post.objects.filter(author=user) if user.is_moderator else []
+
+    return render(request, 'accounts/profile.html', {
+        'user': user,
+        'user_posts': user_posts
+    })
+

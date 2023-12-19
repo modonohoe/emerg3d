@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
-from landing_page.views import get_landing_page
+from landing_page.urls import urlpatterns
 from accounts.views import sign_up
 from accounts.urls import urlpatterns
 from blog.views import PostList, PostDetail
@@ -25,7 +25,7 @@ from blog.urls import urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_landing_page, name="get_landing_page"),
+    path('', include('landing_page.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('summernote/', include('django_summernote.urls')),
