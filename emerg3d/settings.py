@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'landing_page',
     'accounts',
     'blog',
-    'shop'
+    'shop',
+    'ticket'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
