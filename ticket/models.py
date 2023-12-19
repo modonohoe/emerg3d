@@ -1,3 +1,17 @@
 from django.db import models
+from django.conf import settings # to import user
+from .constants import COUNTRY_CHOICES
 
-# Create your models here.
+
+class EnquiryTicket(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    country = models.CharField(max_length=2, choices=COUNTRY_CHOICES, default='IE')
+    completion_date = models.DateField(null=True, blank=True, help_text='(optional)')
+    budget = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, help_text='€ amount (optional)')
+
+    def __str__(self):
+        return self.title
+
+
