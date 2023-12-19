@@ -98,6 +98,16 @@
       </div>
     </nav>
 
+    <div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
     <main>
       {% block content %}
       <!-- content goes here -->

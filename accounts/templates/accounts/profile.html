@@ -26,24 +26,32 @@
         <!-- MY CART -->
     </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            {% if user_tickets %}
-            {% for ticket in user_tickets %}
-            <h2>My Tickets</h2>
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        {% if user_tickets %}
+        <h2>My Tickets</h2>
+        {% for ticket in user_tickets %}
+        <div>
+            <h3>{{ ticket.title }}</h3>
+            <p>{{ ticket.country }}</p>
+            <p>{{ ticket.description }}</p>
+            <p>Completion Date: {{ ticket.completion_date }}</p>
+            <p>Budget: €{{ ticket.budget }}</p>
+            <p>Status: {{ ticket.get_status_display }}</p> <!-- Display status -->
             <div>
-                <h3>{{ ticket.title }}</h3>
-                <p>{{ ticket.description }}</p>
-                <!-- Other ticket details -->
+                <a href="{% url 'delete_ticket' ticket.id %}">Delete</a> |
+                {% if ticket.status == 'pending' %} 
                 <a href="{% url 'edit_ticket' ticket.id %}">Edit</a> |
-                <a href="{% url 'delete_ticket' ticket.id %}">Delete</a>
+                {% endif %}
             </div>
-            {% endfor %}
-            {% else %}
-            <p>You have no open tickets.</p>
-            {% endif %}
         </div>
+        {% endfor %}
+        {% else %}
+        <p>You have no open tickets.</p>
+        {% endif %}
     </div>
+</div>
+
 
 
 
