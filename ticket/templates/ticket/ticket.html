@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% load static %} {% block title %}Enquiry{% endblock %}
 {% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
 
+
+{% if user.is_authenticated %}
 <form method="post">
     <div class="container">
         <div class="row">
@@ -12,13 +14,28 @@
                 </p>
             </div>
             <div class="col-sm-6 col-sm-offset-3 white-labels">
-                {% csrf_token %} {{ form|crispy }}
-                <br />
+                {% csrf_token %}
+                {{ form|crispy }}
+                <br>
                 <button type="submit" class="btn btn-success btn-block">Submit enquiry</button>
                 <br />
             </div>
         </div>
     </div>
 </form>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2 class="custom-text-white text-center">Got a project in mind?</h2>
+            <p class="custom-text-white text-center">
+                You must be a registered user to view this page!<br>Please <a href="{% url 'signin' %}">login</a> or <a
+                    href="{% url 'signup' %}">create an account</a>.
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 
 {% endblock %}

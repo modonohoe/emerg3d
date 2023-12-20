@@ -11,6 +11,7 @@ def validate_not_in_past(value):
 
 # in future projects the above can be defined in a validators.py file
 
+
 class EnquiryTicket(models.Model):
 
     STATUS_CHOICES = (
