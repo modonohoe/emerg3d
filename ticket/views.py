@@ -1,10 +1,10 @@
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import EnquiryTicketForm
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
+from .constants import COUNTRY_CHOICES
 
-@login_required
+
 def create_enquiry_ticket(request):
     if request.method == 'POST':
         form = EnquiryTicketForm(request.POST)
@@ -16,11 +16,11 @@ def create_enquiry_ticket(request):
     else:
         form = EnquiryTicketForm()
 
-    return render(request, 'enquiry_ticket_form.html', {'form': form})
+    return render(request, 'ticket/ticket.html', {'form': form})
 
 @login_required
 def thank_you(request):
-    return render(request, 'thank_you.html')
+    return render(request, 'ticket/thank_you.html')
 
 @login_required
 def edit_ticket(request, ticket_id):

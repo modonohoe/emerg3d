@@ -81,7 +81,7 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'shop' %}">Shop</a></li>
                 <li><a href="{% url 'blogposts' %}">Blog</a></li>
-                <li><a href="#">Enquire</a></li>
+                <li><a href="{% url 'create_ticket' %}">Enquire</a></li>
                 <li>
                   {% if user.is_staff %}
                   <a href="{% url 'admin:index' %}">Admin</a>

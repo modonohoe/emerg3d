@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% load static %} {% block title %}Enquiry{% endblock %}
+{% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="custom-text-white text-center">Got a project in mind?</h2>
+                <p class="custom-text-white">
+                    Fill out this enquiry ticket below and we will contact you as soon as we can. Any open
+                    <a href="profile">tickets</a> can be viewed on your profile.
+                </p>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 white-labels">
+                {% csrf_token %} {{ form|crispy }}
+                <br />
+                <button type="submit" class="btn btn-success btn-block">Submit enquiry</button>
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

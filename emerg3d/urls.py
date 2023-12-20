@@ -24,6 +24,8 @@ from blog.views import PostList, PostDetail
 from blog.urls import urlpatterns
 from shop.views import shop
 from shop.urls import urlpatterns
+from ticket.views import create_enquiry_ticket, thank_you, edit_ticket, delete_ticket
+from ticket.urls import urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
