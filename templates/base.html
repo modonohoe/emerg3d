@@ -82,7 +82,7 @@
                 <li><a href="{% url 'blogposts' %}">Blog</a></li>
                 <li><a href="{% url 'create_ticket' %}">Enquire</a></li>
                 <li>
-                  {% if user.is_staff %}
+                  {% if user.is_admin %}
                   <a href="{% url 'admin:index' %}">Admin</a>
                   {% elif user.is_authenticated %}
                   <a href="{% url 'profile' slug=user.slug %}">Profile</a>
