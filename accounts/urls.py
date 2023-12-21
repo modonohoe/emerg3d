@@ -9,5 +9,4 @@ urlpatterns = [
     path('signup/', sign_up, name='signup'),
     path('profile/<slug:slug>/', profile, name='profile'),
     path('logout/', LogoutView.as_view, name='logout'),
-    path('logout_confirmation/', TemplateView.as_view(template_name='logout_confirmation.html'), name='logout_confirmation')
 ]
