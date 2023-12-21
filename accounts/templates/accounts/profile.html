@@ -105,8 +105,7 @@
             <h2>My Posts</h2>
             <ul>
                 {% for post in user_posts %}
-                <li>{{ post.title }} - {{ post.created_date }}</li>
-                <!-- You can add more details or a link to the post -->
+                <li><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
