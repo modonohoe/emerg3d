@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load static %} {% block title %} Your Profile Page
-{% endblock %} {% block content %} {% include 'gradient.html' %}
+{% endblock %} {% block content %} {% include 'gradient.html' %} {% load crispy_forms_tags %}
 
 <script type="text/javascript">
   function confirmLogout() {
@@ -11,7 +11,7 @@
     // Function to load ticket data into the modal
     function loadTicketData(ticketId) {
         $.ajax({
-            url: '/get_ticket_data/' + ticketId,
+            url: '/ticket/get_ticket_data/' + ticketId,
             method: 'GET',
             success: function (data) {
                 $('#myEditModal .modal-body').html(data.form_html);
@@ -109,7 +109,8 @@
                 </div>
                 <div class="modal-body">
                     <form id="editTicketForm" method="post">
-                        <!-- The form fields will be populated here -->
+                        {% csrf_token %}
+                        {{ form|crispy }}
                     </form>
                 </div>
                 <div class="modal-footer">

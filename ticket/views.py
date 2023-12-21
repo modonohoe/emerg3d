@@ -69,9 +69,10 @@ def get_ticket_data(request, ticket_id):
     ticket = get_object_or_404(EnquiryTicket, id=ticket_id,  user=request.user)
     form = EnquiryTicketForm(instance=ticket)
     form_html = render_to_string('edit_form.html', {'form': form}, request=request)
+
     return JsonResponse({'form_html': form_html})
 
-    
+
 @login_required
 def edit_ticket(request, ticket_id):
     # Retrieve the ticket, ensuring the user is authorized to edit it
