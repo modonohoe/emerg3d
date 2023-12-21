@@ -132,9 +132,10 @@ span>.likes.row {
 /* logo image size */
 
 #logo-image {
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 140px;
+    max-height: 140px;
     border-radius: 50px;
+    margin-right: 5rem;
     transition: box-shadow 0.3s ease;
 }
 
@@ -181,11 +182,12 @@ a {
 
 #myNavbar {
     /* border: 2px pink solid; */
-    padding-top: 3rem;
+    padding-top: 4.5rem;
+    background-color: var(--primary-color);
 }
 
 .navbar-inverse {
-    /* border: 2px pink solid; */
+    background-color: var(--primary-color);
 }
 
 .navbar-brand {
@@ -194,6 +196,7 @@ a {
 
 .navbar-collapse {
     padding: 1.5rem 0 0;
+    background-color: var(--primary-color);
 }
 
 .panel {
@@ -259,6 +262,21 @@ footer a {
     color: var(--accent-color);
     box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
 }
+
+.btn-m {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+/* MODEL STYLES */
+
+.modal-content {
+    background-color: #463f4f;
+    border: 2px solid #eb1f2a;
+    border-radius: 10px;
+}
+
 
 .mycarousel {
     max-height: 450px;
