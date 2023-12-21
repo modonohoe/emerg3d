@@ -10,7 +10,7 @@
         <div class="col-md-6">
             <select id="filter-category" class="form-control" onchange="filterProducts()">
                 <option value="">Select Category</option>
-                {% for category in categories %}
+                {% for category in categorys %}
                 <option value="{{ category.name }}">{{ category.name }}</option>
                 {% endfor %}
             </select>
@@ -23,19 +23,20 @@
             </select>
         </div>
     </div>
+</div>
 
-    <!-- Products List -->
+<div class="container-fluid">
     <div class="row">
         {% for product in products %}
-        <div class="col-md-4 col-sm-6">
-            <div class="thumbnail">
-                <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="img-responsive">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="thumbnail-wrapper">
+                <div class="image-container">
+                    <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="thumbnail-image">
+                </div>
                 <div class="caption">
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.description }}</p>
-                    <p>Price: ${{ product.price }}</p>
-                    <!-- Add to Cart Button (to be implemented later) -->
-                    <!-- <button class="btn btn-primary">Add to Cart</button> -->
+                    <h3 class="custom-text-black">{{ product.name }}</h3>
+                    <p>Price: €{{ product.price }}</p>
+                    <!-- Add to Cart Button -->
                 </div>
             </div>
         </div>
@@ -44,6 +45,28 @@
         {% endfor %}
     </div>
 </div>
+<div class="container center-pagination">
+    <div class="pagination text-center">
+        <div class="text-center">
+            <div class="step-links">
+                {% if products.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ products.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <div class="current custom-text-white">
+                    Page {{ products.number }} of {{ products.paginator.num_pages }}
+                </div>
+
+                {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}">next</a>
+                <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- reload the page with the selected query parameters.-->
 <script type="text/javascript">

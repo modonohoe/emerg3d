@@ -5,9 +5,9 @@
 {% block content %} {% include 'gradient.html' %}
 
 <div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
@@ -19,25 +19,24 @@
 
 <div class="container">
 <div class="row">
-    <div class="col card mb-4  mt-3 left  top">
+    <div class="col card mb-4  mt-3 left top">
         <div class="card-body">
             <!-- The post content goes inside the card-text. -->
             <!-- Use the | safe filter inside the template tags -->
             <p class="card-text ">
                 {{ post.content | safe }}
             </p>
-            <div class="row">
-
-                <div class="col-1">
+            <div class="likes-row">
+                <span class="col-2 text-center">
                     <strong>
                         {% if user.is_authenticated %}
                         <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %}
                             {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like btn btn-lg"><i
                                     class="fas fa-heart"></i></button>
                             {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like btn btn-lg"><i
                                     class="far fa-heart"></i></button>
                             {% endif %}
                         </form>
@@ -47,14 +46,15 @@
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                     </strong>
-                </div>
-                <div class="col-1">
+                </span>
+                <span class="col-2 text-center">
                     {% with comments.count as total_comments %}
-                    <strong class="text-secondary"><i class="far fa-comments"></i>
-                        <!-- Our total_comments variable goes before the closing strong tag -->
-                        {{ total_comments }}</strong>
+                    <button class="btn btn-lg"><a class="custom-text-black" href="#comments-section">
+                    <strong class="text-secondary"><i class="far fa-comments"></i></a></button><br>
+                    <span><!-- Our total_comments variable goes before the closing strong tag -->
+                    {{ total_comments }}</strong></span>
                     {% endwith %}
-                </div>
+                </span>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            <h3 id="comments-section">Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if user.is_authenticated %}
                 
@@ -98,18 +98,3 @@
 </div>
 
 {% endblock content %}
-
-
-<!-- Other post details here -->
-
-<!-- <h2>Comments</h2>
-{% for comment in comments %}
-<p>{{ comment.author.username }}: {{ comment.content }}</p>
-{% endfor %}
-
-<h3>Add a comment</h3>
-<form method="post">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    <button type="submit">Submit</button>
-</form> -->

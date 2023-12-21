@@ -5,6 +5,12 @@
 {% block content %} {% include 'gradient.html' %}
 
 <div class="container-fluid">
+    <h2>EMERG3D Blog</h2>
+    <div class="well text-center">
+        <p class="lead">Keep and eye on our blog for all things EMERG3D</p>
+        <p>From the latest equipment, events, reviews and more!<br>If you would like to become a contributing author to the blog please let us know.<br>
+            All liked posts are saved to your <a class="custom-text-black" href="{% url 'profile' user.slug %}"><u>profile</u></a>.</p>
+    </div>
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
@@ -13,7 +19,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="blog-image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg">
