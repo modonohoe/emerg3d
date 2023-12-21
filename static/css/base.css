@@ -121,6 +121,8 @@ span>.likes.row {
     border: 2px solid black;
 }
 
+
+
 /* special custom font */
 @font-face {
     font-family: 'Horta';
@@ -259,17 +261,21 @@ footer a {
 }
 
 .mycarousel {
-    max-height: 380px;
+    max-height: 450px;
 }
 
-.carousel-inner img {
+.carousel-inner>.item {
+    height: 450px;
+    /* Example fixed height, adjust as needed */
+    overflow: hidden;
+    /* Ensures that any part of the image exceeding the height is hidden */
+}
+
+.carousel-inner>.item>img {
     width: 100%;
-    /* Set width to 100% */
-    margin: auto;
-    min-height: 200px;
-    max-height: 380px;
+    height: 100%;
+    object-fit: cover;
 }
-
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
