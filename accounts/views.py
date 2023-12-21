@@ -1,5 +1,6 @@
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from .forms import RegistrationForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from .models import CustomUser
@@ -14,6 +15,7 @@ def sign_up(request):
         if form.is_valid():
             custom_user = form.save()
             login(request, custom_user)
+            messages.success(request, 'Registration successful. Welcome!')
             return redirect(reverse('profile', kwargs={'slug': custom_user.slug}))
     else:
         form = RegistrationForm()
@@ -22,7 +24,14 @@ def sign_up(request):
 
 
 def get_login_page(request):
+    messages.success(request, 'You have successfully logged in.')
     return render(request, 'accounts/login.html')
+
+
+def user_logout(request):
+    logout(request)
+    messages.success(request, 'You have successfully logged out.')
+    return redirect('index')
 
 
 @login_required

@@ -2,8 +2,19 @@
 {% block title %}Thank You!{% endblock %}
 {% block content %} {% include 'gradient.html' %}
 
-<h2>Thank You!</h2>
-<p>Your enquiry has been submitted successfully.</p>
-<a href="{% url 'home' %}">Return to Home</a>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2 class="custom-text-white text-center">Thank you, {{ user_name }}!</h2>
+            <br><p class="custom-text-white text-center">
+                Your ticket has been submitted successfully!<br><br> You can now review your ticket privately on your <a href="{% url 'profile' user.slug %}">profile</a>! 🎉<br><br>
+                While the status is 'pending' you can edit your ticket.<br><br>
+                Damien will review your ticket and email you with a response shortly.<br><br><br>
+                <a href="{% url 'home' %}">Return to Home</a><br><br><br><br>
+            </p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

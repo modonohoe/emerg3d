@@ -18,9 +18,15 @@ def create_enquiry_ticket(request):
 
     return render(request, 'ticket/ticket.html', {'form': form})
 
+
 @login_required
 def thank_you(request):
-    return render(request, 'ticket/thank_you.html')
+    context = {
+        'user_name': request.user.username,
+        'user': request.user 
+    }
+    return render(request, 'ticket/thank_you.html', context)
+
 
 @login_required
 def edit_ticket(request, ticket_id):

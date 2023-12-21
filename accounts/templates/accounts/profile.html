@@ -39,9 +39,9 @@
             <p>Budget: €{{ ticket.budget }}</p>
             <p>Status: {{ ticket.get_status_display }}</p> <!-- Display status -->
             <div>
-                <a href="{% url 'delete_ticket' ticket.id %}">Delete</a> |
+                <a href="#">Delete</a> |
                 {% if ticket.status == 'pending' %} 
-                <a href="{% url 'edit_ticket' ticket.id %}">Edit</a> |
+                <a href="#">Edit</a> |
                 {% endif %}
             </div>
         </div>
