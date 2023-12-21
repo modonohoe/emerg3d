@@ -7,6 +7,48 @@
   }
 </script>
 
+<script>
+    // Function to load ticket data into the modal
+    function loadTicketData(ticketId) {
+        $.ajax({
+            url: '/get_ticket_data/' + ticketId,
+            method: 'GET',
+            success: function (data) {
+                $('#myEditModal .modal-body').html(data.form_html);
+                $('#myEditModal').data('ticketId', ticketId);
+                $('#myEditModal').modal('show');
+            }
+        });
+    }
+</script>
+
+<script>
+    function submitEditForm() {
+        var ticketId = $('#myEditModal').data('ticketId');
+        $.ajax({
+            url: '/edit_ticket/' + ticketId,
+            method: 'POST',
+            data: $('#editTicketForm').serialize(),
+            success: function (response) {
+                // Handle response, close modal, refresh page, etc.
+                $('#myEditModal').modal('hide');
+                $('#message-container').html('<div class="alert alert-success">Ticket updated successfully!</div>');
+                setTimeout(function () {
+                    location.reload();
+                }, 2000);  // 2000 milliseconds = 2 seconds
+            },
+            error: function (xhr, status, error) {
+                var errorMessage = xhr.status + ': ' + xhr.statusText;
+                // Check if the server provided additional information
+                if (xhr.responseText) {
+                    errorMessage += '\n' + xhr.responseText;
+                }
+                $('#error-message').text(errorMessage);
+            },
+        });
+    }
+</script>
+
 <div class="container custom-text-white">
   <div class="text-right">
     <form action="{% url 'logout' %}" method="post" onsubmit="return confirmLogout()">
@@ -39,26 +81,26 @@
                 <p><strong>Budget:</strong> €{{ ticket.budget }}</p>
                 <p><strong>Status:</strong> {{ ticket.get_status_display }}</p>
                 <div>
-                    <button class="btn btn-danger btn-m" data-toggle="modal" data-target="#myDeleteModal">
-                        Delete
-                    </button> |
-                    {% if ticket.status == 'pending' %} 
-                    <!-- Button trigger modal -->
-                    <button class="btn btn-primary btn-m" data-toggle="modal" data-target="#myEditModal">
-                        Edit
-                    </button>
+                    <button class="btn btn-danger btn-m" data-toggle="modal" data-target="#myDeleteModal">Delete</button> |
+                
+                    {% if ticket.status == 'pending' %}
+                    <button class="btn btn-primary btn-m" onclick='loadTicketData({{ ticket.id }})' data-toggle="modal"
+                        data-target="#myEditModal">Edit</button>
+                    {% endif %}
+                </div>
+                </div>
+                    {% endfor %}
+                    {% else %}
+                    <p>You have no open tickets.</p>
                     {% endif %}
                 </div>
             </div>
-            {% endfor %}
-            {% else %}
-            <p>You have no open tickets.</p>
-            {% endif %}
         </div>
     </div>
 
     <!-- Edit Modal -->
-    <div class="modal fade" id="myEditModal" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myEditModal" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -66,15 +108,17 @@
                     <h3 class="modal-title" id="myModalLabel">Edit your ticket:</h3>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form id="editTicketForm" method="post">
+                        <!-- The form fields will be populated here -->
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-success" onclick="submitEditForm()">Save</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    </div>
 
     <!-- Delete Modal -->
     <div class="modal fade" id="myDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myDeleteModalLabel"
@@ -112,5 +156,7 @@
         </div>
     </div>
 </div>
+
+
 
 {% endblock %}

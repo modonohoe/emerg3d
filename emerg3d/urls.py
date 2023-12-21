@@ -24,7 +24,7 @@ from blog.views import PostList, PostDetail
 from blog.urls import urlpatterns
 from shop.views import shop
 from shop.urls import urlpatterns
-from ticket.views import create_enquiry_ticket, thank_you, edit_ticket, delete_ticket
+from ticket.views import create_enquiry_ticket, thank_you, edit_ticket, delete_ticket, get_ticket_data
 from ticket.urls import urlpatterns
 
 urlpatterns = [
