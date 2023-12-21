@@ -100,7 +100,7 @@
 
 
     {% if messages %}
-    <div class="container-fluid">
+    <div class="container-fluid message-container">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
             {{ message }}

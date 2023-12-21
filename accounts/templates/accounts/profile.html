@@ -26,11 +26,10 @@
     function submitEditForm() {
         var ticketId = $('#myEditModal').data('ticketId');
         $.ajax({
-            url: '/edit_ticket/' + ticketId,
+            url: '/ticket/edit_ticket/' + ticketId,
             method: 'POST',
             data: $('#editTicketForm').serialize(),
             success: function (response) {
-                // Handle response, close modal, refresh page, etc.
                 $('#myEditModal').modal('hide');
                 $('#message-container').html('<div class="alert alert-success">Ticket updated successfully!</div>');
                 setTimeout(function () {
@@ -44,10 +43,39 @@
                     errorMessage += '\n' + xhr.responseText;
                 }
                 $('#error-message').text(errorMessage);
-            },
+            }
         });
     }
 </script>
+
+<script>
+    function deleteTicket() {
+        var ticketId = $('#myDeleteModal').data('ticket-id');
+        $.ajax({
+            url: '/ticket/delete_ticket/' + ticketId,
+            method: 'POST',
+            data: {
+                csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val()
+            },
+            success: function (response) {
+                if (response.status === "success") {
+                    $('#myDeleteModal').modal('hide');
+                    $('#message-container').html('<div class="alert alert-success">' + response.message + '</div>');
+                    $('#ticket-' + ticketId).remove();
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                } else {
+                    alert("Error: " + response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("Error: " + xhr.status + " - " + error);
+            }
+        });
+    }
+</script>
+
 
 <div class="container custom-text-white">
   <div class="text-right">
@@ -73,7 +101,7 @@
             {% if user_tickets %}
             <h2>My Tickets</h2>
             {% for ticket in user_tickets %}
-            <div class="well custom-text-black">
+            <div class="well custom-text-black" id="ticket-{{ ticket.id }}">
                 <h3 class="custom-text-black">Project '{{ ticket.title }}'</h3>
                 <p><strong>Country:</strong> {{ ticket.country }}</p>
                 <p><strong>Project Description:</strong> {{ ticket.description }}</p>
@@ -81,7 +109,8 @@
                 <p><strong>Budget:</strong> €{{ ticket.budget }}</p>
                 <p><strong>Status:</strong> {{ ticket.get_status_display }}</p>
                 <div>
-                    <button class="btn btn-danger btn-m" data-toggle="modal" data-target="#myDeleteModal">Delete</button> |
+                    <button class="btn btn-danger btn-m" data-ticket-id="{{ ticket.id }}" data-toggle="modal"
+                        data-target="#myDeleteModal">Delete</button> |
                 
                     {% if ticket.status == 'pending' %}
                     <button class="btn btn-primary btn-m" onclick='loadTicketData({{ ticket.id }})' data-toggle="modal"
@@ -135,7 +164,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success">Yes</button>
+                    <button type="button" class="btn btn-success" onclick="deleteTicket({{ ticket.id }})">Yes</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

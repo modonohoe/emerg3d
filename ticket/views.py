@@ -55,13 +55,26 @@ def edit_ticket(request, ticket_id):
     return render(request, 'edit_ticket_form.html', {'form': form})
 
 
+# @login_required
+# def delete_ticket(request, ticket_id):
+#     ticket = EnquiryTicket.objects.get(id=ticket_id, user=request.user)
+#     if request.method == 'POST':
+#         ticket.delete()
+#         return redirect('profile')  # Or wherever appropriate
+#     return render(request, 'delete_ticket_confirm.html', {'ticket': ticket})
+
+
 @login_required
 def delete_ticket(request, ticket_id):
-    ticket = EnquiryTicket.objects.get(id=ticket_id, user=request.user)
-    if request.method == 'POST':
-        ticket.delete()
-        return redirect('profile')  # Or wherever appropriate
-    return render(request, 'delete_ticket_confirm.html', {'ticket': ticket})
+    # Ensure the request is AJAX and method is POST
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest' and request.method == 'POST':
+        try:
+            ticket = EnquiryTicket.objects.get(id=ticket_id, user=request.user)
+            ticket.delete()
+            return JsonResponse({"status": "success", "message": "Ticket deleted successfully."}, status=200)
+        except EnquiryTicket.DoesNotExist:
+            return JsonResponse({"status": "error", "message": "Ticket not found."}, status=404)
+
 
 
 @login_required
@@ -73,30 +86,37 @@ def get_ticket_data(request, ticket_id):
     return JsonResponse({'form_html': form_html})
 
 
+# @login_required
+# def edit_ticket(request, ticket_id):
+#     ticket = get_object_or_404(EnquiryTicket, id=ticket_id, user=request.user)
+#     if request.method == 'POST':
+#         form = EnquiryTicketForm(request.POST, instance=ticket)
+#         if form.is_valid():
+#             form.save()
+#             messages.success(
+#                 request, 'Your ticket has been updated successfully.')
+#             return redirect('profile')
+#         else:
+#             messages.error(
+#                 request, 'There was an error updating your ticket. Please check the form.')
+
+#     else:
+#         form = EnquiryTicketForm(instance=ticket)
+
+#     return render(request, 'edit_ticket_form.html', {'form': form, 'ticket': ticket})
+
 @login_required
 def edit_ticket(request, ticket_id):
-    # Retrieve the ticket, ensuring the user is authorized to edit it
     ticket = get_object_or_404(EnquiryTicket, id=ticket_id, user=request.user)
-
-    # Handle the POST request
     if request.method == 'POST':
         form = EnquiryTicketForm(request.POST, instance=ticket)
         if form.is_valid():
-            # Save the updated ticket
             form.save()
             messages.success(
                 request, 'Your ticket has been updated successfully.')
-            # Redirect to a confirmation page or the profile page
-            # Replace 'profile' with the name of your redirect URL
-            return redirect('profile')
+            return JsonResponse({'success': True})
         else:
-            # If the form is invalid, show an error message
-            messages.error(
-                request, 'There was an error updating your ticket. Please check the form.')
+            error_messages = form.errors.as_json()
+            return JsonResponse({'success': False, 'errors': error_messages})
 
-    # For a GET request, or if the form is invalid, render the form with the existing ticket data
-    else:
-        form = EnquiryTicketForm(instance=ticket)
-
-    # Render the edit ticket page with the form
-    return render(request, 'edit_ticket_form.html', {'form': form, 'ticket': ticket})
+    return JsonResponse({'success': False, 'message': 'Invalid request method.'})
