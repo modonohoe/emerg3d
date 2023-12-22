@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product, Category
 
@@ -27,3 +27,8 @@ def shop(request):
         products = paginator.page(paginator.num_pages)
 
     return render(request, 'shop/shop.html', {'products': products, 'categorys': categorys})
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    return render(request, 'shop/product_details.html', {'product': product})

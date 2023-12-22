@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %}
+
+{% block title %}Product Detail{% endblock %}
+
+{% block content %}
+<div class="product-detail-container">
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-xs-12 col-sm-6">
+            <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="img-responsive product-image">
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-xs-12 col-sm-6">
+            <h3 class="product-title">{{ product.name }}</h3>
+            <div class="product-description well">{{ product.description | safe }}</div>
+            <p class="product-price well"><strong>Price:</strong> €{{ product.price }}</p>
+            <a href="{% url 'shop' %}"><button class="btn btn-lg"><i class="fa-solid fa-arrow-left"></i> Back to shop</button></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

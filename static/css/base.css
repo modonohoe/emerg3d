@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Tilt+Prism&display=swap');
 
+
+
 :root {
     --primary-color: #000000;
     /* Black */
@@ -58,6 +60,18 @@ body {
     box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
 }
 
+.product-image {
+    max-height: 400px;
+    margin: 5rem 1rem;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.603);
+    border-radius: 8px;
+    float: right;
+}
+
+
+
+
+
 .image-container {
     position: relative;
     width: 100%;
@@ -93,16 +107,20 @@ a>.step-links {
     align-items: center;
 }
 
+.card-body {
+    background-color: #FAF9F6;
+    border-radius: 10px;
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem;
+}
+
 .blog-image-container {
     position: relative;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
     max-height: 400px;
-}
-
-.card-body {
-    padding: 2rem;
 }
 
 .likes-row {
@@ -299,5 +317,20 @@ footer a {
 @media (max-width: 600px) {
     .carousel-caption {
         display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-detail-container .product-image {
+        float: none;
+        /* Disable float for smaller screens */
+        margin: 0 auto;
+        /* Center the image */
+        display: block;
+    }
+
+    .product-detail-container>.row>div {
+        text-align: center;
+        /* Center text and content in each column */
     }
 }

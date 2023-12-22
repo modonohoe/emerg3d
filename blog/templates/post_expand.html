@@ -17,15 +17,15 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 <div class="row">
-    <div class="col card mb-4  mt-3 left top">
+    <div class="col card mb-2  mt-2">
         <div class="card-body">
-            <!-- The post content goes inside the card-text. -->
-            <!-- Use the | safe filter inside the template tags -->
-            <p class="card-text ">
-                {{ post.content | safe }}
-            </p>
+            <div>
+                <p class="card-text ">
+                    {{ post.content | safe }}
+                </p>
+            </div>
             <div class="likes-row">
                 <span class="col-2 text-center">
                     <strong>
