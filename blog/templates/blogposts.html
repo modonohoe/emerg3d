@@ -1,8 +1,14 @@
 {% extends "base.html" %}
-{% load static %}
-{% block title %} Blog Posts {% endblock %}
 
-{% block content %} {% include 'gradient.html' %}
+{% load static %}
+
+{% block title %}EMERG3D Blog{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'gradient.html' %}
 
 <div class="container-fluid">
     <h2>EMERG3D Blog</h2>
@@ -63,5 +69,6 @@
     </nav>
     {% endif %}
 </div>
+
 {%endblock%}
 
