@@ -1,5 +1,14 @@
-{% extends "base.html" %} {% load static %} {% block title %} Registration Page
-{% endblock %} {% include 'gradient.html' %} {% block content %}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Registration Page{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'gradient.html' %}
 
 <form method="post">
   <div class="container custom-text-white text-center">

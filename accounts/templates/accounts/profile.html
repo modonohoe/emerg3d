@@ -1,5 +1,14 @@
-{% extends "base.html" %} {% load static %} {% block title %} Your Profile Page
-{% endblock %} {% block content %} {% include 'gradient.html' %} {% load crispy_forms_tags %}
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Your Profile Page{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'gradient.html' %} 
 
 <script type="text/javascript">
   function confirmLogout() {
@@ -182,7 +191,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}

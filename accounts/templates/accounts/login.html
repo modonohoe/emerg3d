@@ -1,5 +1,15 @@
-{% extends "base.html" %} {% load static %} {% block title %}Login{% endblock %}
-{% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block title %}Login{% endblock %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %} 
+
+{% include 'gradient.html' %}
+
 <form method="post">
     <div class="container">
         <div class="row">
@@ -7,7 +17,7 @@
                 <h2 class="custom-text-white text-center">Welcome to EMERG3D Props!</h2>
                 <p class="custom-text-white">
                     Log in to your account below or
-                    <a href="/signup">create an account</a> to get started.
+                    <a href="{% url 'signup' %}">create an account</a> to get started.
                 </p>
             </div>
             <div class="col-sm-6 col-sm-offset-3 white-labels">
@@ -19,4 +29,5 @@
         </div>
     </div>
 </form>
+
 {% endblock %}
