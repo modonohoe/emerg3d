@@ -224,7 +224,7 @@ a:hover {
 
 #myNavbar {
     /* border: 2px pink solid; */
-    padding-top: 4.5rem;
+    padding-top: 6.5rem;
     background-color: var(--primary-color);
 }
 
@@ -240,6 +240,9 @@ a:hover {
     background-color: var(--primary-color);
 }
 
+.navbar-header {
+    padding: 2rem;
+}
 
 .navbar-toggle {
     position: relative;
