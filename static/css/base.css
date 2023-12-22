@@ -203,8 +203,13 @@ h4 {
     color: var(--text-color);
 }
 
+
 a {
     color: var(--link-color);
+}
+
+a:hover {
+    color: #fbedce;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */

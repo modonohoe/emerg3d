@@ -16,16 +16,14 @@
                 alt="3d printed mask costume"
             />
             <div class="carousel-caption">
-                <h3>Video of printing</h3>
-                <p>Bring your projects to life</p>
+                <h3><a href="{% url 'blogposts' %}">Checkout out our blog for the latest news</a></h3>
             </div>
         </div>
 
         <div class="item">
             <img src="{% static 'images/store-header.png' %}" alt="Image" />
             <div class="carousel-caption">
-                <h3>Video of cosplay costume</h3>
-                <p>No project is too big or too small</p>
+                <h3><a href="{% url 'shop' %}">Browse our latest products</a></h3>
             </div>
         </div>
     
@@ -33,8 +31,7 @@
         <div class="item">
             <img src="{% static 'images/hero-image-2-min.png' %}" alt="New Image Description" />
             <div class="carousel-caption">
-                <h3>Your New Image Title</h3>
-                <p>Some description for the new image</p>
+                <h3><a href="{% url 'create_ticket' %}">Commission a project</a></h3>
             </div>
         </div>
     </div>
