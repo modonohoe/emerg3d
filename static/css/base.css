@@ -27,6 +27,10 @@
     color: #000000;
 }
 
+.custom-text-red {
+    color: var(--accent-color);
+}
+
 .custom-text-smallprint {
     color: #b0b0b0;
     font-size: small;
@@ -107,12 +111,15 @@ a>.step-links {
     align-items: center;
 }
 
+.blog-card-body {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: var(--text-color);
+    border-radius: 8px;
+}
+
 .card-body {
-    background-color: #FAF9F6;
-    border-radius: 10px;
-    width: 90%;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 2rem;
 }
 
 .blog-image-container {

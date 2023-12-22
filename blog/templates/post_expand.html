@@ -19,8 +19,8 @@
 
 <div class="container-fluid">
 <div class="row">
-    <div class="col card mb-2  mt-2">
-        <div class="card-body">
+    <div class="col card">
+        <div class="blog-card-body">
             <div>
                 <p class="card-text ">
                     {{ post.content | safe }}
@@ -64,12 +64,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-6 col-sm-offset-3 card mb-4  mt-3 ">
             <h3 id="comments-section">Comments:</h3>
-            <div class="card-body">
+            <div class="blog-card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
+                <div class="comments">
                     <p class="font-weight-bold"> Comment by {{ comment.author }} on {{ comment.created_on }}</p>
                     <p>{{ comment.content | linebreaks }}</p>
                 </div>
@@ -80,8 +80,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="card-body">
+        <div class="col-md-6 col-sm-offset-3 card mb-4  mt-3">
+            <div class="blog-card-body">
                 {% if user.is_authenticated %}
                 
                 <h3>Leave a comment:</h3>

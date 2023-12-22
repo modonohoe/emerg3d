@@ -8,8 +8,8 @@
     <h2>EMERG3D Blog</h2>
     <div class="well text-center">
         <p class="lead">Keep and eye on our blog for all things EMERG3D</p>
-        <p>From the latest equipment, events, reviews and more!<br>If you would like to become a contributing author to the blog please let us know.<br>
-            All liked posts are saved to your <a class="custom-text-black" href="{% url 'profile' user.slug %}"><u>profile</u></a>.</p>
+        <p>From the latest equipment, events, reviews and more!<br>If you would like to become a contributing author to
+            the blog please let us know.</p>
     </div>
     <div class="row">
         <!-- Blog Entries Column -->
@@ -18,7 +18,7 @@
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
+                        <div class="blog-card-body">
                             <div class="blog-image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
@@ -32,10 +32,10 @@
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <p class="custom-text-black ">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                            <p class="card-text h5">{{ post.created_on}} <i class="fas fa-heart custom-text-red"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
                     </div>
@@ -65,10 +65,3 @@
 </div>
 {%endblock%}
 
-    <!-- {% for post in posts %}
-    -- Display post details --
-    <h2>{{ post.title }}</h2>
-    -- other post details --
-    <p>{{ post.likes.count }} Likes</p>
-    <p>{{ post.num_comments }} Comments</p>
-    {% endfor %} -->
