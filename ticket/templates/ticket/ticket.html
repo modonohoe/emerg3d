@@ -1,6 +1,14 @@
-{% extends "base.html" %} {% load static %} {% block title %}Enquiry{% endblock %}
-{% load crispy_forms_tags %} {% block content %} {% include 'gradient.html' %}
+{% extends "base.html" %}
 
+{% load static %} 
+
+{% block title %}Enquiry{% endblock %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %} 
+
+{% include 'gradient.html' %}
 
 {% if user.is_authenticated %}
 <form method="post">
@@ -36,6 +44,5 @@
     </div>
 </div>
 {% endif %}
-
 
 {% endblock %}
