@@ -73,7 +73,11 @@ body {
 }
 
 
-
+#comments-section {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
 
 
 .image-container {
@@ -132,19 +136,25 @@ a>.step-links {
 
 .likes-row {
     display: flex;
-    justify-content: left;
-    align-content: center;
+    color: #FAF9F6;
+    justify-content: flex-start;
+    /* Aligns items to the start (left) */
+    align-items: center;
+    /* Vertically centers items in the row */
     flex-wrap: wrap;
+    /* Allows items to wrap in smaller screens */
+    margin: 1rem 0;
+    /* Adds vertical margin for spacing, adjust as needed */
 }
 
-button>.likes-row {
-    padding: 4rem;
-    margin: 4rem;
+.likes-row .btn {
+    padding: 2rem;
+    /* Adjust padding for buttons, if needed */
+    margin: 2rem;
+    /* Adds some space between the buttons */
+    background-color: #FAF9F6;
 }
 
-span>.likes.row {
-    border: 2px solid black;
-}
 
 
 
@@ -292,6 +302,7 @@ footer a {
     padding: 1rem;
     margin: 1rem;
 }
+
 
 
 /* MODEL STYLES */
