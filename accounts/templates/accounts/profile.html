@@ -85,21 +85,18 @@
     </form>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <h2>User Profile</h2>
+        <h2>User Profile</h2>
+        <div class="col-sm-6 col-sm-offset-3">        
             <p>Username: {{ user.username }}</p>
             <p>Email: {{ user.email }}</p>
         </div>
     </div>
 
-    <div>
-        <!-- MY CART -->
-    </div>
 
     <div class="row">
+        <h2>My Tickets</h2>
         <div class="col-sm-6 col-sm-offset-3">
             {% if user_tickets %}
-            <h2>My Tickets</h2>
             {% for ticket in user_tickets %}
             <div class="well custom-text-black" id="ticket-{{ ticket.id }}">
                 <h3 class="custom-text-black">Project '{{ ticket.title }}'</h3>
@@ -169,14 +166,13 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+</div>
 
-
-
-
+<div class="container">
     <div class="row">
+        <h2>Post</h2>
         <div class="col-sm-6 col-sm-offset-3">
             {% if user_posts %}
-            <h2>My Posts</h2>
             <ul>
                 {% for post in user_posts %}
                 <li><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></li>
