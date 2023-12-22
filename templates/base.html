@@ -100,7 +100,7 @@
 
 
     {% if messages %}
-    <div class="container-fluid message-container">
+    <div class="container-fluid message-container blackground">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
             {{ message }}
@@ -111,6 +111,9 @@
         {% endfor %}
     </div>
     {% endif %}
+
+    <!-- gradient divider-->
+    {% include 'gradient.html' %}
 
     <main class="pl-2 pr-2">
       {% block content %}
