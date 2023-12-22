@@ -74,8 +74,8 @@ body {
 
 
 #comments-section {
+    padding-top: 2rem;
     display: flex;
-    width: 100vw;
     justify-content: center;
     background-color: #000000;
 }
@@ -121,10 +121,10 @@ a>.step-links {
     align-items: center;
 }
 
-.blog-card-body {
-    padding: 2rem;
-    margin: 2rem;
-    background-color: var(--text-color);
+.comment-card-body {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #FAF9F6;
     border-radius: 8px;
 }
 
@@ -144,13 +144,9 @@ a>.step-links {
     display: flex;
     color: #FAF9F6;
     justify-content: flex-start;
-    /* Aligns items to the start (left) */
     align-items: center;
-    /* Vertically centers items in the row */
     flex-wrap: wrap;
-    /* Allows items to wrap in smaller screens */
     margin: 1rem 0;
-    /* Adds vertical margin for spacing, adjust as needed */
 }
 
 .likes-row .btn {
@@ -346,20 +342,5 @@ footer a {
 @media (max-width: 600px) {
     .carousel-caption {
         display: none;
-    }
-}
-
-@media (max-width: 800px) {
-    .product-detail-container .product-image {
-        float: none;
-        /* Disable float for smaller screens */
-        margin: 0 auto;
-        /* Center the image */
-        display: block;
-    }
-
-    .product-detail-container>.row>div {
-        text-align: center;
-        /* Center text and content in each column */
     }
 }

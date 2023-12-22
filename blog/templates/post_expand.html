@@ -9,8 +9,8 @@
 {% block content %}
 
 <div class="masthead">
-    <div class="container text-center">
-        <div class="row">
+    <div class="container-fluid text-center">
+        <div class="row-fluid">
             <div class="col-sm-10 col-sm-offset-1 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1><br>
                 <p class="post-subtitle custom-text-white">BY: {{ post.author }} | {{ post.created_on }}</p><br>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="container-fluid">
-    <div class="">
+    <div class="row-fluid">
         <div class="well col-md-8 col-md-offset-2">
             <p class="card-text ">
                 {{ post.content | safe }}
@@ -30,7 +30,7 @@
 </div>
 
 <div class="container-fluid">
-    <div class="likes-row row">
+    <div class="likes-row row-fluid">
         <div class="col-xs-6 text-center">
             {% if user.is_authenticated %}
             <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline-block">
@@ -59,28 +59,26 @@
         </div>
     </div><br>
 
-    <div class="row">
-        <div id="comments-section">
-            <div class="col-md-6">
-                <h3>Comments:</h3>
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                {% for comment in comments %}
-                <div class="blog-card-body">
-                    <p class="font-weight-bold"> Comment by {{ comment.author }} on {{ comment.created_on }}</p>
-                    <p>{{ comment.content | linebreaks }}</p>
+    <div class="row-fluid" id="comments-section">
+        <div class="col-md-6">
+            <h3>Comments:</h3>
+            <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+            {% for comment in comments %}
+            <div class="comment-card-body">
+                <p class="font-weight-bold"> Comment by {{ comment.author }} on {{ comment.created_on }}</p>
+                <p>{{ comment.content | linebreaks }}</p>
+            </div>
+            <div>
+                {% empty %}
+                <div class="comment-card-body">
+                    <p>No comments yet...</p>
                 </div>
-                <div>
-                    {% empty %}
-                    <div class="blog-card-body">
-                        <p>No comments yet...</p>
-                    </div>
-                    
-                    {% endfor %}
-                </div>
+                
+                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="row flex-center">
+    <div class="row-fluid flex-center">
         <div class="col-md-6">
             {% if user.is_authenticated %}
             <h3>Leave a comment:</h3>

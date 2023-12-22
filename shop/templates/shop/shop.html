@@ -6,14 +6,14 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
     <h2>Our Products</h2>
     <div class="well text-center">
         <p>We are in the process of setting up a Shopify to add a checkout to our site.<br>In the meantime if you would like any of the items in our shop, please contact Damien via email.</p>
     </div>
 
     <!-- Filtering and Sorting -->
-    <div class="row">
+    <div class="row-fluid">
         <div class="col-md-6 p2 m2" >
             <select id="filter-category" class="form-control" onchange="filterProducts()">
                 <option value="">Select Category</option>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row">
+    <div class="row-fluid">
         {% for product in products %}
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="thumbnail-wrapper">
@@ -52,7 +52,7 @@
         {% endfor %}
     </div>
 </div>
-<div class="container center-pagination">
+<div class="container-fluid center-pagination">
     <div class="pagination text-center">
         <div class="text-center">
             <div class="step-links">
