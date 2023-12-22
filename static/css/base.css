@@ -75,6 +75,7 @@ body {
 
 #comments-section {
     display: flex;
+    width: 100vw;
     justify-content: center;
     background-color: #000000;
 }

@@ -1,10 +1,10 @@
 from .forms import CommentForm
 from django.views import generic, View
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.shortcuts import render
 from django.db.models import Count
+from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post,Comment
 
 
 class PostList(generic.ListView):
@@ -12,11 +12,6 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'blogposts.html'
     paginate_by = 6
-
-
-# def post_list(request):
-#     posts = Post.objects.annotate(num_comments=Count('comments')).all()
-#     return render(request, 'blog/blogposts.html', {'posts': posts})
 
 
 class PostDetail(View):
@@ -55,6 +50,8 @@ class PostDetail(View):
             comment.post = post
             comment.author = request.user 
             comment.save()
+            messages.success(request, 'Your comment has been added successfully!')
+            return redirect('post_detail', slug=slug)
         else:
             comment_form = CommentForm()
 

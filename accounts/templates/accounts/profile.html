@@ -44,12 +44,14 @@
                 }, 2000);  // 2000 milliseconds = 2 seconds
             },
             error: function (xhr, status, error) {
-                var errorMessage = xhr.status + ': ' + xhr.statusText;
-                // Check if the server provided additional information
-                if (xhr.responseText) {
-                    errorMessage += '\n' + xhr.responseText;
-                }
-                $('#error-message').text(errorMessage);
+                // Construct a user-friendly, generic error message
+                var errorMessage = 'An error occurred while updating the ticket. Please try again later.';
+
+                // Optionally log detailed errors for debugging purposes
+                console.error('Error - ' + xhr.status + ': ' + xhr.statusText + '; ' + xhr.responseText);
+
+                // Display the user-friendly error message in the message container
+                $('#message-container').html('<div class="alert alert-danger">' + errorMessage + '</div>');
             }
         });
     }
@@ -61,6 +63,8 @@
     }
 </script>
 
+
+<!-- Unresolved bug where delete successful won't load -->
 <script>
     function deleteTicket() {
         var ticketId = $('#myDeleteModal').data('ticketId');
@@ -71,23 +75,20 @@
                 csrfmiddlewaretoken: $('input[name="csrfmiddlewaretoken"]').val()
             },
             success: function (response) {
-                if (response.status === "success") {
-                    $('#myDeleteModal').modal('hide');
-                    $('#message-container').html('<div class="alert alert-success">' + response.message + '</div>');
-                    $('#ticket-' + ticketId).remove();
-                    setTimeout(function () {
-                        location.reload();
-                    }, 2000);
-                } else {
-                    alert("Error: " + response.message);
-                }
+                $('#myDeleteModal').modal('hide');
+                $('#message-container').html('<div class="alert alert-success">Your ticket has been deleted from our database.</div>');
+                $('#ticket-' + ticketId).remove();
+                // Removed the setTimeout function and location.reload()
             },
             error: function (xhr, status, error) {
-                alert("Error: " + xhr.status + " - " + error);
+                var errorMessage = 'An error occurred (Error ' + xhr.status + '). Please try again later.';
+                $('#message-container').html('<div class="alert alert-danger">' + errorMessage + '</div>');
             }
         });
     }
+
 </script>
+
 
 
 <div class="container custom-text-white">
