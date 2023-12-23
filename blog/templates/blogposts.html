@@ -29,17 +29,19 @@
                             {% else %}
                             <img class="img-responsive" src=" {{ post.featured_image.url }}">
                             {% endif %}
-                            <div class="image-flash">
-                                <p class="author">Author: {{ post.author }}</p>
-                            </div>
                         </div>
-                        <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                            <h2 class="card-title">{{ post.title }}</h2>
-                            <p class="custom-text-black ">{{ post.excerpt }}</p>
-                        </a>
-                        <hr />
-                        <p class="card-text h5">{{ post.created_on}} <i class="fas fa-heart custom-text-red"></i>
-                            {{ post.number_of_likes }}</p>
+                        <div class="image-flash">
+                            <p class="author">Author: {{ post.author }}</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="custom-text-black ">{{ post.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text h5">{{ post.created_on}} <i class="fas fa-heart custom-text-red"></i>
+                                {{ post.number_of_likes }}</p>
+                        </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
