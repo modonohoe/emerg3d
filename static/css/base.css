@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Tilt+Prism&display=swap');
 
+@font-face {
+    font-family: 'Horta';
+    src: url('/static/fonts/horta.otf') format('opentype');
+}
 
-
+/*------ ROOT VARIABLES ------------------------------------*/
+/* where the root does not load
+consistently e.g. border and modals
+hex value has been used */
 :root {
     --primary-color: #000000;
     /* Black */
@@ -15,6 +22,16 @@
     /* Cream */
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nova Square', sans-serif;
+    font-size: large;
+    background-color: var(--secondary-color);
+}
+
+/*------ custom text and links ------------------------------------*/
 .custom-text-white {
     color: #FAF9F6;
 }
@@ -24,7 +41,7 @@
 }
 
 .custom-text-black {
-    color: #000000;
+    color: var(--primary-color);
 }
 
 .custom-text-red {
@@ -36,19 +53,218 @@
     font-size: small;
 }
 
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: #fbedce;
+}
+
+/*------ headings ------------------------------------*/
+h1,
+h2 {
+    font-family: 'Horta', sans-serif;
+    font-weight: 700;
+    /* gradient heading background color derived from accent color */
+    background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
+    width: 100%;
+    padding: 1.5rem 1rem;
+    margin-top: 0;
+    border: 3px solid black;
+    border-radius: 6px;
+    letter-spacing: 0.4rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+h3,
+h4 {
+    font-family: 'Horta', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+    color: var(--text-color);
+}
+
+/*------ logo ------------------------------------*/
+#logo-image {
+    max-width: 140px;
+    max-height: 140px;
+    border-radius: 50px;
+    margin-right: 5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+#logo-image:hover {
+    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
+}
+
+/*------ navbar ------------------------------------*/
+.navbar {
+    /* removes navbars default Bootstrap margin-bottom and rounded borders */
+    background-color: var(--primary-color);
+    padding: 0.5rem 0 4rem;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+#myNavbar {
+    padding-top: 6.5rem;
+    background-color: var(--primary-color);
+}
+
+.navbar-inverse {
+    background-color: var(--primary-color);
+}
+
+.navbar-brand {
+    padding: 0 0 2rem 0;
+}
+
+.navbar-collapse {
+    background-color: var(--primary-color);
+}
+
+.navbar-header {
+    padding: 2rem;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 2rem;
+    margin-top: 5rem;
+    background-color: var(--accent-color);
+    background-image: none;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.navbar .navbar-nav>li>a {
+    color: var(--text-color);
+    border-radius: 18px;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar .navbar-nav>.active>a {
+    color: var(--link-color);
+}
+
+.navbar .navbar-nav>li>a:hover,
+.navbar .navbar-nav>li>a:focus,
+.navbar .navbar-nav>.active>a:hover,
+.navbar .navbar-nav>.active>a:focus {
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
+}
+
+.panel {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.panel-body {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/*------  custom gradient ------------------------------------*/
+#top-black-gradient {
+    height: 50px;
+    background-image: linear-gradient(to top, rgba(70, 63, 79, 1), rgba(0, 0, 0, 1));
+}
+
+/*------ carousel ------------------------------------*/
+.mycarousel {
+    max-height: 450px;
+}
+
+.carousel-inner>.item {
+    height: 450px;
+    overflow: hidden;
+}
+
+.carousel-inner>.item>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*------ buttons ------------------------------------*/
+.btn-lg {
+    color: var(--accent-color);
+    padding: 1.5rem;
+    margin: 2rem;
+    transition: box-shadow 0.3s ease;
+    border-radius: 50px;
+}
+
+.btn-lg:hover {
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
+}
+
+.btn-m {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/*------ custom spacing ------------------------------------*/
 .margin-around {
     margin: 1rem;
 }
 
-body {
-    font-family: 'Nova Square', sans-serif;
-    font-size: large;
-    background-color: var(--secondary-color);
+.flex-center {
+    display: flex;
+    justify-content: center;
 }
 
-#top-black-gradient {
-    height: 50px;
-    background-image: linear-gradient(to top, rgba(70, 63, 79, 1), rgba(0, 0, 0, 1));
+/*------ footer ------------------------------------*/
+footer {
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    padding-bottom: 2rem;
+    margin-top: auto;
+    width: 100vw;
+}
+
+footer div {
+    padding: 1rem;
+}
+
+footer h3 {
+    margin: 0;
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+/*------ shop and blog ------------------------------------*/
+#comments-section {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.thumbnail-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .thumbnail-wrapper {
@@ -70,37 +286,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.603);
     border-radius: 8px;
     float: right;
-}
-
-
-#comments-section {
-    padding-top: 2rem;
-    display: flex;
-    justify-content: center;
-    background-color: #000000;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-}
-
-
-.image-container {
-    position: relative;
-    width: 100%;
-    padding-top: 75%;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.thumbnail-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .caption {
@@ -150,182 +335,11 @@ a>.step-links {
 
 .likes-row .btn {
     padding: 2rem;
-    /* Adjust padding for buttons, if needed */
     margin: 2rem;
-    /* Adds some space between the buttons */
     background-color: #FAF9F6;
 }
 
-
-
-
-/* special custom font */
-@font-face {
-    font-family: 'Horta';
-    src: url('/static/fonts/horta.otf') format('opentype');
-}
-
-/* logo image size */
-
-#logo-image {
-    max-width: 140px;
-    max-height: 140px;
-    border-radius: 50px;
-    margin-right: 5rem;
-    transition: box-shadow 0.3s ease;
-}
-
-#logo-image:hover {
-    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
-}
-
-
-h1,
-h2 {
-    font-family: 'Horta', sans-serif;
-    font-weight: 700;
-    /* background-color: var(--accent-color); */
-    background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
-    width: 100%;
-    padding: 1.5rem 1rem;
-    margin-top: 0;
-    border: 3px solid black;
-    border-radius: 6px;
-    letter-spacing: 0.4rem;
-    color: var(--text-color);
-    text-align: center;
-}
-
-h3,
-h4 {
-    font-family: 'Horta', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.4rem;
-    color: var(--text-color);
-}
-
-
-a {
-    color: var(--link-color);
-}
-
-a:hover {
-    color: #fbedce;
-}
-
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-    background-color: var(--primary-color);
-    padding: 0.5rem 0 4rem;
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
-#myNavbar {
-    /* border: 2px pink solid; */
-    padding-top: 6.5rem;
-    background-color: var(--primary-color);
-}
-
-.navbar-inverse {
-    background-color: var(--primary-color);
-}
-
-.navbar-brand {
-    padding: 0 0 2rem 0;
-}
-
-.navbar-collapse {
-    background-color: var(--primary-color);
-}
-
-.navbar-header {
-    padding: 2rem;
-}
-
-.navbar-toggle {
-    position: relative;
-    float: right;
-    padding: 2rem;
-    margin-top: 5rem;
-    background-color: var(--accent-color);
-    background-image: none;
-    border: 1px solid;
-    border-radius: 10px;
-}
-
-.panel {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    border: none;
-}
-
-.panel-body {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.navbar .navbar-nav>li>a {
-    color: var(--text-color);
-    border-radius: 18px;
-    transition: box-shadow 0.3s ease;
-}
-
-.navbar .navbar-nav>.active>a {
-    color: var(--link-color);
-}
-
-.navbar .navbar-nav>li>a:hover,
-.navbar .navbar-nav>li>a:focus,
-.navbar .navbar-nav>.active>a:hover,
-.navbar .navbar-nav>.active>a:focus {
-    color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
-}
-
-/* Add a gray background color and some padding to the footer */
-footer {
-    /* background-color: var(--primary-color); */
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    padding-bottom: 2rem;
-    margin-bottom: 0;
-}
-
-footer div {
-    padding: 1rem;
-}
-
-footer h3 {
-    margin: 0;
-}
-
-footer a {
-    color: var(--accent-color);
-}
-
-.btn-lg {
-    color: var(--accent-color);
-    padding: 1.5rem;
-    margin: 2rem;
-    transition: box-shadow 0.3s ease;
-    border-radius: 50px;
-}
-
-.btn-lg:hover {
-    color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(235, 31, 42, 0.7);
-}
-
-.btn-m {
-    padding: 1rem;
-    margin: 1rem;
-}
-
-
-
-/* MODEL STYLES */
+/*------ modals ------------------------------------*/
 
 .modal-content {
     background-color: #463f4f;
@@ -333,23 +347,7 @@ footer a {
     border-radius: 10px;
 }
 
-
-.mycarousel {
-    max-height: 450px;
-}
-
-.carousel-inner>.item {
-    height: 450px;
-    /* Example fixed height, adjust as needed */
-    overflow: hidden;
-    /* Ensures that any part of the image exceeding the height is hidden */
-}
-
-.carousel-inner>.item>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+/*------ MEDIA QUERIES ------------------------------------*/
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
