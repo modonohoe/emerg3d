@@ -350,8 +350,40 @@ a>.step-links {
 /*------ MEDIA QUERIES ------------------------------------*/
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .carousel-caption {
         display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .navbar-collapse {
+        max-width: 300px;
+    }
+
+    .navbar-brand {
+        padding-top: 25px;
+    }
+
+    #logo-image {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #logo-image {
+        max-height: 90px;
+    }
+
+    .navbar-brand {
+        padding-top: 25px;
+    }
+
+    .navbar-inverse {
+        padding: 0;
+    }
+
+    .navbar-toggle {
+        padding: 1rem;
     }
 }
