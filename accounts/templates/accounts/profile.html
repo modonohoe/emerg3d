@@ -33,7 +33,7 @@
     function submitEditForm() {
         var ticketId = $('#myEditModal').data('ticketId');
         $.ajax({
-            url: '/ticket/edit_ticket/' + ticketId + '/',
+            url: '/ticket/edit_ticket/' + ticketId + '/', // Trailing forward slash is important
             method: 'POST',
             data: $('#editTicketForm').serialize(),
             success: function (response) {
@@ -41,23 +41,17 @@
                 $('#message-container').html('<div class="alert alert-success">Ticket updated successfully!</div>');
                 setTimeout(function () {
                     location.reload();
-                }, 2000);  // 2000 milliseconds = 2 seconds
+                }, 2000);
             },
             error: function (xhr, status, error) {
-                // Construct a user-friendly, generic error message
-                var errorMessage = 'An error occurred while updating the ticket. Please try again later.';
-
-                // Optionally log detailed errors for debugging purposes
-                console.error('Error - ' + xhr.status + ': ' + xhr.statusText + '; ' + xhr.responseText);
-
-                // Display the user-friendly error message in the message container
-                $('#message-container').html('<div class="alert alert-danger">' + errorMessage + '</div>');
+                $('#message-container').html('<div class="alert alert-danger"> An error occurred while updating the ticket. Please try again later. </div>');
             }
         });
     }
 </script>
 
 <script>
+    // Saves the ticketId from the profile page and injects into modal
     function prepareDeleteModal(ticketId) {
         $('#myDeleteModal').data('ticketId', ticketId);
     }
@@ -78,15 +72,15 @@
                 $('#myDeleteModal').modal('hide');
                 $('#message-container').html('<div class="alert alert-success">Your ticket has been deleted from our database.</div>');
                 $('#ticket-' + ticketId).remove();
-                // Removed the setTimeout function and location.reload()
+                setTimeout(function () {
+                location.reload();
+                }, 2000); 
             },
             error: function (xhr, status, error) {
-                var errorMessage = 'An error occurred (Error ' + xhr.status + '). Please try again later.';
-                $('#message-container').html('<div class="alert alert-danger">' + errorMessage + '</div>');
+                $('#message-container').html('<div class="alert alert-danger"> An error occurred while deleting the ticket. Please try again later. </div>');
             }
         });
     }
-
 </script>
 
 
@@ -100,9 +94,9 @@
     </div>
     <div class="row">
         <h2>User Profile</h2>
-        <div class="col-sm-6 col-sm-offset-3">        
-            <p>Username: {{ user.username }}</p>
-            <p>Email: {{ user.email }}</p>
+        <div class="col-sm-6 col-sm-offset-3 text-center">        
+            <p>Welcome {{ user.username }}! 🌟</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
         </div>
     </div>
 
@@ -157,8 +151,8 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-success" onclick="submitEditForm()">Save</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
+            </div>
+        </div>
     </div>
 
     <!-- Delete Modal -->
@@ -177,9 +171,9 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-success" onclick="deleteTicket()">Yes</button>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
