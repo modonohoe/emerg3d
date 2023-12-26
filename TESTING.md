@@ -1,15 +1,15 @@
 # Testing and Validation
 
-- ## Testing Contents
+## Testing Contents
 - [Testing and Validation](#testing-and-validation)
-- [Testing Contents](#testing-contents)
-- [User Stories](#user-stories)
-- [Code Validation](#code-validation)
-- [HTML](#html)
-- [CSS](#css)
-- [Form and User Validation](#form-and-user-validation)
-- [Responsivity](#responsivity)
-- [Accessibility](#accessibility)
+  - [Testing Contents](#testing-contents)
+  - [User Stories](#user-stories)
+  - [Code Validation](#code-validation)
+    - [HTML](#html)
+    - [CSS](#css)
+  - [Form and User Validation](#form-and-user-validation)
+  - [Responsivity](#responsivity)
+  - [Accessibility](#accessibility)
 
 ## User Stories
 
