@@ -6,8 +6,8 @@
 
 {% block content %}
 
+<h1>Our Products</h1>
 <div class="container-fluid">
-    <h2>Our Products</h2>
     <div class="well text-center">
         <p>🛠️ We are in the process of incorporating Shopify to add a checkout to our site. 🛠️<br>In the meantime if you would like any of the items in our shop, please contact Damien via email.</p>
     </div>
@@ -33,24 +33,20 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row-fluid">
-        {% for product in products %}
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="thumbnail-wrapper">
-                <div class="image-container">
-                    <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="thumbnail-image">
-                </div>
-                <div class="caption">
-                    <h3 class="custom-text-black">{{ product.name }}</h3>
-                    <a class="custom-text-black btn btn-info" href="{% url 'product_details' product.id %}">See all product details</a>
-                    <p>Price: €{{ product.price }}</p>
-                </div>
+    {% for product in products %}
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="thumbnail-wrapper">
+            <div class="image-container">
+                <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="thumbnail-image">
+            </div>
+            <div class="caption">
+                <h2 class="preview-heading tall-text custom-text-black">{{ product.name }}</h2>
+                <a class="custom-text-black btn btn-info" href="{% url 'product_details' product.id %}">See all product details</a>
+                <p>Price: €{{ product.price }}</p>
             </div>
         </div>
-        {% empty %}
-        <p>No products found.</p>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
 <div class="container-fluid center-pagination">
     <div class="pagination text-center">

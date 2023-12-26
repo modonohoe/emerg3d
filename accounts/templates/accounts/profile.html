@@ -86,51 +86,56 @@
 
 
 <div class="container custom-text-white">
-  <div class="text-right">
-    <form action="{% url 'logout' %}" method="post" onsubmit="return confirmLogout()">
-        {% csrf_token %}
-        <input type="submit" value="Logout" class="btn btn-primary margin-around" />
-    </form>
+    <div class="text-right">
+        <form action="{% url 'logout' %}" method="post" onsubmit="return confirmLogout()">
+            {% csrf_token %}
+            <input type="submit" value="Logout" class="btn btn-primary margin-around" />
+        </form>
     </div>
+</div>
+<h1>User Profile</h1>
+<div class="container-fluid custom-text-white">
     <div class="row">
-        <h2>User Profile</h2>
         <div class="col-sm-6 col-sm-offset-3 text-center">        
             <p>Welcome {{ user.username }}! 🌟</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
         </div>
     </div>
+</div>
 
+<div>
+    <p class="red-outline-textbox text-center full-width custom-text-white">My Tickets</p>
+</div>
 
-    <div class="row">
-        <h2>My Tickets</h2>
-        <div class="col-sm-6 col-sm-offset-3">
-            {% if user_tickets %}
-            {% for ticket in user_tickets %}
-            <div class="well custom-text-black" id="ticket-{{ ticket.id }}">
-                <h3 class="custom-text-black">Project '{{ ticket.title }}'</h3>
-                <p><strong>Country:</strong> {{ ticket.country }}</p>
-                <p><strong>Project Description:</strong> {{ ticket.description }}</p>
-                <p><strong>Desired Completion Date:</strong> {{ ticket.completion_date }}</p>
-                <p><strong>Budget:</strong> €{{ ticket.budget }}</p>
-                <p><strong>Status:</strong> {{ ticket.get_status_display }}</p>
-                <div>
-                    <button class="btn btn-danger btn-m" onclick='prepareDeleteModal({{ ticket.id }})' data-toggle="modal"
-                        data-target="#myDeleteModal">Delete</button> |
-                
-                    {% if ticket.status == 'pending' %}
-                    <button class="btn btn-primary btn-m" onclick='loadTicketData({{ ticket.id }})' data-toggle="modal"
-                        data-target="#myEditModal">Edit</button>
-                    {% endif %}
-                </div>
-                </div>
-                    {% endfor %}
-                    {% else %}
-                    <p>You have no open tickets.</p>
-                    {% endif %}
-                </div>
+<div class="container-fluid">
+    <div class="col-sm-6 col-sm-offset-3">
+        {% if user_tickets %}
+        {% for ticket in user_tickets %}
+        <div class="well custom-text-black" id="ticket-{{ ticket.id }}">
+            <h3 class="custom-text-black">Project '{{ ticket.title }}'</h3>
+            <p><strong>Country:</strong> {{ ticket.country }}</p>
+            <p><strong>Project Description:</strong> {{ ticket.description }}</p>
+            <p><strong>Desired Completion Date:</strong> {{ ticket.completion_date }}</p>
+            <p><strong>Budget:</strong> €{{ ticket.budget }}</p>
+            <p><strong>Status:</strong> {{ ticket.get_status_display }}</p>
+            <div>
+                <button class="btn btn-danger btn-m" onclick='prepareDeleteModal({{ ticket.id }})' data-toggle="modal"
+                    data-target="#myDeleteModal">Delete</button> |
+            
+                {% if ticket.status == 'pending' %}
+                <button class="btn btn-primary btn-m" onclick='loadTicketData({{ ticket.id }})' data-toggle="modal"
+                    data-target="#myEditModal">Edit</button>
+                {% endif %}
+            </div>
+            </div>
+                {% endfor %}
+                {% else %}
+                <p>You have no open tickets.</p>
+                {% endif %}
             </div>
         </div>
     </div>
+</div>
 
     <!-- Edit Modal -->
     <div class="modal fade" id="myEditModal" tabindex="-1" role="dialog" aria-labelledby="myEditModalLabel"
@@ -139,7 +144,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title" id="myModalLabel">Edit your ticket:</h3>
+                    <p class="modal-title" id="myModalLabel">Edit your ticket:</p>
                 </div>
                 <div class="modal-body">
                     <form id="editTicketForm" method="post">
@@ -162,7 +167,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title" id="myModalLabel">Delete your ticket:</h3>
+                    <p class="modal-title" id="myModalLabel">Delete your ticket:</p>
                 </div>
                 <div class="modal-body custom-text-white">
                     Are you sure you want to <strong>delete</strong> your enquiry ticket?<br>(This action cannot be undone)
@@ -176,11 +181,11 @@
     </div>
 </div>
 
+{% if user_posts %}
 <div class="container">
     <div class="row">
-        <h2>Post</h2>
+        <p class="red-outline-textbox">Post</p>
         <div class="col-sm-6 col-sm-offset-3">
-            {% if user_posts %}
             <ul>
                 {% for post in user_posts %}
                 <li><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></li>

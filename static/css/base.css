@@ -60,12 +60,14 @@ a {
 a:hover {
     color: #fbedce;
 }
+
 .red-outline-textbox {
-    font-size: 26px;
+    font: 30px 'Horta', san-serif;
+    letter-spacing: 0.4rem;
     background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
     display: inline-block;
     padding: 2rem 1rem 1rem 1rem;
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 6px;
 }
 
@@ -94,6 +96,10 @@ a:hover {
     width: 90%;
     flex-shrink: 1;
     border-radius: 10px;
+}
+
+.preview-heading {
+    font-size: 30px;
 }
 
 
@@ -134,7 +140,7 @@ h4 {
 
 .large-label {
     font: 28px 'Horta', sans-serif;
-    margin: 20px 0px 10px;#
+    margin: 20px 0px 10px;
     letter-spacing: 1px;
 }
 
@@ -333,10 +339,18 @@ footer a {
 }
 
 .thumbnail-wrapper {
-    margin: 3rem 1rem;
+    margin: 2rem 0;
     background-color: var(--text-color);
     border-radius: 12px;
-    border: 2px solid #463f4f;
+    border: 1px solid #463f4f;
+}
+
+.no-padding {
+    padding: 
+}
+
+.tall-text {
+    height: 100px;
 }
 
 .thumbnail-wrapper:hover,
@@ -454,5 +468,11 @@ a>.step-links {
 
     .navbar-toggle {
         padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .preview-heading {
+        font-size: 20px;
     }
 }

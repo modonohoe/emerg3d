@@ -6,6 +6,7 @@
 
 {% block content %}
 
+
 <div class="container-fluid">
     <div class="row-fluid">
         <!-- Product Image -->
@@ -15,7 +16,7 @@
 
         <!-- Product Details -->
         <div class="col-xs-12 col-sm-5">
-            <h2 class="product-title">{{ product.name }}</h2>
+            <h1 class="product-title">{{ product.name }}</h1>
             <div class="product-description well">{{ product.description | safe }}</div>
             <p class="product-price well"><strong>Price:</strong> €{{ product.price }}</p>
             <a href="{% url 'shop' %}"><button class="btn btn-lg"><i class="fa-solid fa-arrow-left"></i> Back to shop</button></a>

@@ -8,11 +8,11 @@
 
 {% block content %}
 
+<h1>Registration</h1>
 <form method="post">
   <div class="container custom-text-white text-center">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
-        <h2>Registration</h2>
         {% csrf_token %} {% for field in form %}
         <div class="form-group">
           <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
