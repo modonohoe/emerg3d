@@ -69,6 +69,7 @@ a:hover {
     padding: 2rem 1rem 1rem 1rem;
     border: 2px solid black;
     border-radius: 6px;
+    margin-bottom: 1rem;
 }
 
 .about-divider {
@@ -146,7 +147,7 @@ h4 {
 
 .full-width {
     width: 100%;
-    margin: 0;
+    margin: 1rem 0;
 }
 
 /*------ logo ------------------------------------*/

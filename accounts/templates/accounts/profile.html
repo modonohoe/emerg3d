@@ -144,7 +144,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <p class="modal-title" id="myModalLabel">Edit your ticket:</p>
+                    <p class="modal-title custom-text-white" id="myModalLabel">Edit your ticket:</p>
                 </div>
                 <div class="modal-body">
                     <form id="editTicketForm" method="post">
@@ -167,7 +167,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <p class="modal-title" id="myModalLabel">Delete your ticket:</p>
+                    <p class="modal-title custom-text-white" id="myModalLabel">Delete your ticket:</p>
                 </div>
                 <div class="modal-body custom-text-white">
                     Are you sure you want to <strong>delete</strong> your enquiry ticket?<br>(This action cannot be undone)
@@ -182,9 +182,11 @@
 </div>
 
 {% if user_posts %}
+<div>
+    <p class="red-outline-textbox text-center full-width custom-text-white">My Posts</p>
+</div>
 <div class="container">
     <div class="row">
-        <p class="red-outline-textbox">Post</p>
         <div class="col-sm-6 col-sm-offset-3">
             <ul>
                 {% for post in user_posts %}
