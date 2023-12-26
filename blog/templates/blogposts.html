@@ -30,15 +30,11 @@
                             <img class="img-responsive" src=" {{ post.featured_image.url }}">
                             {% endif %}
                         </div>
-                        <div class="image-flash">
-                            <p class="author">Author: {{ post.author }}</p>
-                        </div>
                         <div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="custom-text-black ">{{ post.excerpt }}</p>
-                            </a>
+                            <p class="red-outline-textbox full-width text-center card-title"><a href="{% url 'post_detail' post.slug %}" class="post-link custom-text-white">{{ post.title }}</a></p>
+                            <p class="custom-text-black ">{{ post.excerpt }}</p>
                             <hr />
+                            <p class="author"><strong>Author: </strong>{{ post.author }}</p>
                             <p class="card-text h5">{{ post.created_on}} <i class="fas fa-heart custom-text-red"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
