@@ -61,12 +61,44 @@ a:hover {
     color: #fbedce;
 }
 .red-outline-textbox {
-
+    background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
+    display: inline-block;
+    padding: 2rem 1rem 1rem 1rem;
+    border: 3px solid black;
+    border-radius: 6px;
 }
 
+.about-divider {
+    background-color: lightgrey;
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5rem 1rem;
+}
+
+.about-box {
+    padding: 0rem 3rem;
+    margin: 0rem 2rem;
+    max-width: 45%;
+    flex-grow: 1;
+    flex-shrink:1;
+}
+
+.about-image {
+    height: 90%;
+    width: 90%;
+    flex-shrink: 1;
+    border-radius: 10px;
+}
+
+
 /*------ headings ------------------------------------*/
-h1,
-h2 {
+h1 {
+    font-size: 42px;
     font-family: 'Horta', sans-serif;
     font-weight: 700;
     /* gradient heading background color derived from accent color */
@@ -81,12 +113,28 @@ h2 {
     text-align: center;
 }
 
+h2 {
+    font-size: 38px;
+    font-family: 'Horta', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.4rem;
+    padding: 0.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
 h3,
 h4 {
     font-family: 'Horta', sans-serif;
     font-weight: 700;
     letter-spacing: 0.4rem;
     color: var(--text-color);
+}
+
+.large-label {
+    font: 28px 'Horta', sans-serif;
+    margin: 20px 0px 10px;#
+    letter-spacing: 1px;
 }
 
 /*------ logo ------------------------------------*/
@@ -247,7 +295,7 @@ footer a {
 
 /*------ shop and blog ------------------------------------*/
 #comments-section {
-    padding-top: 2rem;
+    padding: 2rem 0rem 2rem;
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
