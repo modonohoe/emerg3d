@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import CustomUser
 from blog.models import Post
 from django.contrib import messages
-from ticket.models import EnquiryTicket 
+from ticket.models import EnquiryTicket
 
 
 def sign_up(request):
@@ -63,4 +63,3 @@ def profile(request, slug):
         'user_tickets': user_tickets,
         'user_posts': user_posts
     })
-

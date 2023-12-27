@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Count
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post,Comment
+from .models import Post, Comment
 
 
 class PostList(generic.ListView):
@@ -48,7 +48,7 @@ class PostDetail(View):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.author = request.user 
+            comment.author = request.user
             comment.save()
             messages.success(request, 'Your comment has been added successfully!')
             return redirect('post_detail', slug=slug)

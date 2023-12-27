@@ -276,8 +276,7 @@ h4 {
 .about-button {
     padding: 1rem;
     background-color: var(--text-color);
-    color: var(--secondary-color);
-    border: 2px solid --primary-color;
+    border: 2px solid #000000;
     border-radius: 12px;
 }
 
