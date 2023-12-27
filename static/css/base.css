@@ -483,3 +483,22 @@ a>.step-links {
         font-size: 20px;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .about-box {
+        max-width: 95%;
+        padding: 0.5rem;
+    }
+
+    .about-image {
+        max-width: 60%;
+        height: auto;
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .btn-lg {
+        margin: 1rem;
+    }
+}

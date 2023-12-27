@@ -108,9 +108,9 @@
 </div>
 
 <div class="container-fluid">
-    <div class="col-sm-6 col-sm-offset-3">
-        {% if user_tickets %}
-        {% for ticket in user_tickets %}
+    {% if user_tickets %}
+    {% for ticket in user_tickets %}
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
         <div class="well custom-text-black" id="ticket-{{ ticket.id }}">
             <h3 class="custom-text-black">Project '{{ ticket.title }}'</h3>
             <p><strong>Country:</strong> {{ ticket.country }}</p>
