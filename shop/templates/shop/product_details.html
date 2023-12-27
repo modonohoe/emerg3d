@@ -7,19 +7,19 @@
 {% block content %}
 
 
-<div class="container-fluid">
-    <div class="row-fluid">
-        <!-- Product Image -->
-        <div class="col-xs-12 col-sm-6 flex-center">
-            <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="img-responsive product-image">
-        </div>
-
+<div class="container">
+    <div class="row justify-content-md-center">
         <!-- Product Details -->
-        <div class="col-xs-12 col-sm-5">
+        <div class="col-lg-8 col-md-auto col-sm-12">
             <h1 class="product-title">{{ product.name }}</h1>
             <div class="product-description well">{{ product.description | safe }}</div>
             <p class="product-price well"><strong>Price:</strong> €{{ product.price }}</p>
-            <a href="{% url 'shop' %}"><button class="btn btn-lg"><i class="fa-solid fa-arrow-left"></i> Back to shop</button></a>
+            <a href="{% url 'shop' %}"><button class="btn btn-lg"><i class="fa-solid fa-arrow-left"></i> Back to
+                    shop</button></a>
+        </div>
+        <!-- Product Image -->
+        <div class="col-lg-4 col-md-auto col-sm-12 flex-center">
+            <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="img-responsive product-image">
         </div>
     </div>
 </div>
