@@ -14,13 +14,13 @@
         <div class="row-fluid  text-center">
             <div class="col-sm-6 col-sm-offset-3">
                 <p class="custom-text-white">
-                    Log in to your account below or<br>
+                    Log in to your account below or
                     <a href="{% url 'signup' %}">create an account</a> to get started.
                 </p>
             </div>
             <div class="col-sm-6 col-sm-offset-3 white-labels">
                 {% csrf_token %} {{ form|crispy }}
-                <button type="submit" class="btn btn-success login-button full-width">Login</button>
+                <button type="submit" class="btn btn-success btn-block">Login</button>
                 <br />
             </div>
         </div>

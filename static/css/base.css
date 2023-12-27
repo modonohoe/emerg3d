@@ -102,12 +102,12 @@ a:hover {
 .preview-heading {
     font-size: 30px;
 }
-
+/* 
 .form-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 
 /*------ headings ------------------------------------*/
@@ -288,12 +288,8 @@ h4 {
     border-radius: 12px;
 }
 
-.reg-button {
+.signup-button {
     max-width: 203.3px;
-}
-
-.login-button {
-    max-width: 177px;
 }
 
 /*------ custom spacing ------------------------------------*/
