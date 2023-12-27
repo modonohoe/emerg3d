@@ -12,9 +12,13 @@
 <form method="post">
     <div class="container custom-text-white text-center">
         <div class="col-sm-6 col-sm-offset-3 form-group">
+            <p>
+                Already have an account?<br>
+                <a href="{% url 'signin' %}">Log in</a> instead!
+            </p>
             {% csrf_token %} {% for field in form %}
             <p><label for="{{ field.id_for_label }}">{{ field.label_tag }}</label></p>
-            <p class="custom-text-black no-gutters">{{ field }}</p>
+            <p class="custom-text-black">{{ field }}</p>
             {% if field.errors %}
             <p class="custom-text-smallprint">{{ field.errors }}</p>
             {% endif %}
@@ -22,10 +26,6 @@
             <button class="btn btn-success reg-button full-width" type="submit">
             Register
             </button>
-            <p>
-            Already have an account?
-            <a href="{% url 'signin' %}">Log in</a> instead!
-            </p>
         </div>
     </div>
 </form>

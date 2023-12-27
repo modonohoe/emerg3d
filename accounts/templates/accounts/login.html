@@ -11,17 +11,16 @@
 <h1>Welcome to EMERG3D Props!</h1>
 <form method="post">
     <div class="container-fluid">
-        <div class="row-fluid">
+        <div class="row-fluid  text-center">
             <div class="col-sm-6 col-sm-offset-3">
                 <p class="custom-text-white">
-                    Log in to your account below or
+                    Log in to your account below or<br>
                     <a href="{% url 'signup' %}">create an account</a> to get started.
                 </p>
             </div>
             <div class="col-sm-6 col-sm-offset-3 white-labels">
                 {% csrf_token %} {{ form|crispy }}
-                <br />
-                <button type="submit" class="btn btn-success btn-block">Login</button>
+                <button type="submit" class="btn btn-success login-button full-width">Login</button>
                 <br />
             </div>
         </div>

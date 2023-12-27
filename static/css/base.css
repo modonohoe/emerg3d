@@ -292,6 +292,10 @@ h4 {
     max-width: 203.3px;
 }
 
+.login-button {
+    max-width: 177px;
+}
+
 /*------ custom spacing ------------------------------------*/
 .margin-around {
     margin: 1rem;
