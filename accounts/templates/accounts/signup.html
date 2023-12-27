@@ -17,13 +17,13 @@
         </p>
         <div class="col-sm-6 col-sm-offset-3 form-group">
             {% csrf_token %} {% for field in form %}
-            <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label></p>
-            <p class="custom-text-black">{{ field }}</p>
+            <label for="{{field.id_for_label}}">{{field.label_tag}}</label>
+            <p class="custom-text-black">{{field}}</p>
             {% if field.errors %}
-            <p class="custom-text-smallprint">{{ field.errors }}</p>
+            <p class="custom-text-smallprint">{{field.errors}}</p>
             {% endif %}
             {% endfor %}
-            <button class="btn btn-success signup-button full-width type="submit">
+            <button class="btn btn-success signup-button full-width" type="submit">
             Register
             </button>
         </div>

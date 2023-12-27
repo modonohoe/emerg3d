@@ -25,15 +25,15 @@
                         <div class="blog-image-container">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="img-responsive"
-                                src="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg">
+                                src="https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg" alt="placeholder or default image for blog of a bee on a flower">
                             {% else %}
-                            <img class="img-responsive" src=" {{ post.featured_image.url }}">
+                            <img class="img-responsive" src="{{ post.featured_image.url }}" alt="An image chosen by the author of the blog to represent its contents, this should be described within the blog">
                             {% endif %}
                         </div>
                         <div>
                             <p class="red-outline-textbox full-width text-center card-title"><a href="{% url 'post_detail' post.slug %}" class="post-link custom-text-white">{{ post.title }}</a></p>
                             <p class="custom-text-black ">{{ post.excerpt }}</p>
-                            <hr />
+                            <hr>
                             <p class="author"><strong>Author: </strong>{{ post.author }}</p>
                             <p class="card-text h5">{{ post.created_on}} <i class="fas fa-heart custom-text-red"></i>
                                 {{ post.number_of_likes }}</p>
@@ -49,19 +49,6 @@
             </div>
         </div>
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
 
 {%endblock%}
