@@ -10,28 +10,24 @@
 
 <h1>Registration</h1>
 <form method="post">
-  <div class="container custom-text-white text-center">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        {% csrf_token %} {% for field in form %}
-        <div class="form-group">
-          <label for="{{ field.id_for_label }}">{{ field.label_tag }}</label>
-          <p class="custom-text-black">{{ field }}</p>
-          {% if field.errors %}
-          <p class="custom-text-smallprint">{{ field.errors }}</p>
-          {% endif %}
+    <div class="container custom-text-white text-center">
+        <div class="col-sm-6 col-sm-offset-3 form-group">
+            {% csrf_token %} {% for field in form %}
+            <p><label for="{{ field.id_for_label }}">{{ field.label_tag }}</label></p>
+            <p class="custom-text-black no-gutters">{{ field }}</p>
+            {% if field.errors %}
+            <p class="custom-text-smallprint">{{ field.errors }}</p>
+            {% endif %}
+            {% endfor %}
+            <button class="btn btn-success reg-button full-width" type="submit">
+            Register
+            </button>
+            <p>
+            Already have an account?
+            <a href="{% url 'signin' %}">Log in</a> instead!
+            </p>
         </div>
-        {% endfor %}
-        <button class="btn btn-success btn-block" type="submit">
-          Register
-        </button>
-        <p>
-          Already have an account?
-          <a href="{% url 'signin' %}">Log in</a> instead!
-        </p>
-      </div>
     </div>
-  </div>
 </form>
 
 {% endblock %}

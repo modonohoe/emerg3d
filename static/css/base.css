@@ -62,7 +62,7 @@ a:hover {
 }
 
 .red-outline-textbox {
-    font: 30px 'Horta', san-serif;
+    font: 38px 'Horta', san-serif;
     letter-spacing: 0.4rem;
     background-image: linear-gradient(to top, rgba(133, 18, 26, 0.8), rgba(235, 31, 42, 1));
     display: inline-block;
@@ -101,6 +101,12 @@ a:hover {
 
 .preview-heading {
     font-size: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -282,6 +288,10 @@ h4 {
     border-radius: 12px;
 }
 
+.reg-button {
+    max-width: 203.3px;
+}
+
 /*------ custom spacing ------------------------------------*/
 .margin-around {
     margin: 1rem;
@@ -344,10 +354,6 @@ footer a {
     background-color: var(--text-color);
     border-radius: 12px;
     border: 1px solid #463f4f;
-}
-
-.no-padding {
-    padding: 
 }
 
 .tall-text {
