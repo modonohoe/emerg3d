@@ -404,6 +404,9 @@ a>.step-links {
 }
 
 .blog-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -488,6 +491,11 @@ a>.step-links {
     .about-box {
         max-width: 95%;
         padding: 0.5rem;
+        font-size: small;
+    }
+
+    .about-section {
+        padding-top: 2rem;
     }
 
     .about-image {
@@ -495,10 +503,31 @@ a>.step-links {
         height: auto;
         padding-top: 1rem;
     }
+
+    h1 {
+        font-size: xx-large;
+    }
+
+    h2 {
+        font-size: x-large;
+    }
+
+    .red-outline-textbox, h3 {
+        font-size: larger;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .btn-lg {
         margin: 1rem;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #logo-image {
+        max-width: 300px;
+        max-height: 300px;
+        padding-right: 8rem;
+        padding-bottom: 2rem;
     }
 }
