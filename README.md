@@ -196,8 +196,7 @@ Profile page with enquiry ticket modal
 
 #### Color Scheme
 
-<details>
-<summary>Basic Palette</summary>
+Basic Palette
 
 Hexadecimal codes that correspond to the company's logo were provided by the client. It was decided 'off-white' would replace the standard white color for text as it creates less of a glare while still maintaining sufficient contrast for accessibility.
 
@@ -206,12 +205,11 @@ Hexadecimal codes that correspond to the company's logo were provided by the cli
 The colors were then imported into the base.css page and assigned as root colors for ease of use (and all elements using the tags can be instantly amended site-wide in future if the logo changes).
 
 ![root-colors](documentation/readme/color-palette.png)
-</details>
+
 
 #### Fonts
 
-<details>
-<summary>Horta</summary>
+Horta
 
 The headline font 'Horta' is used in the company logo and has an open font license.
 
@@ -221,10 +219,8 @@ The headline font 'Horta' is used in the company logo and has an open font licen
 Sample of Horta font:
 ![Horta sample](documentation/readme/horta-sample.png)
 
-</details>
 
-<details>
-<summary>Nova Square</summary>
+Nova Square
 
 The body font 'Nova Square' was chosen for its striking simplicity. It was created by the famous stonemason [Wojciech Kalinowski](http://www.identifont.com/show?3DQU)
 
@@ -233,7 +229,7 @@ The body font 'Nova Square' was chosen for its striking simplicity. It was creat
 Sample of Nova Square font:
 ![Nova Square sample](documentation/readme/nova-font.png)
 
-</details>
+
 
 #### Photography
 
