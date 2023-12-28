@@ -112,7 +112,7 @@ User stories what were identified, were then linked to feature 'epics'. (There i
 | *Customer Support* | ADMIN | Provide contact information to users | Reassure them and provide customer support |
 | *Blog* | ADMIN | publish blog posts to share my current progress, events and products | I can update visitors regularly |
 | | MODERATOR |  Showcase my work and activities, share information | Engage with my followers/audience |
-| *Online Store | ADMIN | Provide multiple sizes for items in the cosplay store | Facilitate more customers |
+| *Online Store* | ADMIN | Provide multiple sizes for items in the cosplay store | Facilitate more customers |
 |  | USER |save products to a wish list | return to items I like later |
 | none | DEV | Deploy website to Heroku | Link the repository to Heroku with installed dependencies and config vars |
 
@@ -139,17 +139,58 @@ An order model was initially created however it need order itmm and then order. 
 Created using Balsamiq
 
 Base Template
-Home Page (blog and store preview - carousel?)
-Blog
-Blogpost
-Store
-Product
-Enquiry page
-Registration page
-Login page
-Profile page (+messages)
-Profile page (+ modal)
 
+![wireframe for base template](documentation/readme/base-wireframe-min.png)
+
+
+Home Page
+
+![wireframe for homepage](documentation/readme/index-wireframe-min.png)
+
+
+Blog
+
+![wireframe for blog page](documentation/readme/blog-wireframe-min.png)
+
+
+Blogpost
+
+![wireframe for individual blogpost](documentation/readme/blogpost-wireframe-min.png)
+
+
+Store
+
+![wireframe for shop](documentation/readme/shop-wireframe-min.png)
+
+
+Product
+
+![wireframe for product page](documentation/readme/product-wireframe-min.png)
+
+
+Enquiry page
+
+![wireframe for enquiry page](documentation/readme/enquiry-wireframe-min.png)
+
+
+Registration page
+
+![wireframe for registration page](documentation/readme/registration-wireframe-min.png)
+
+
+Login page
+
+![wireframe for login](documentation/readme/login-wireframe-min.png)
+
+
+Profile page featuring Django Messages alert
+
+![wireframe for profile page with alerts](documentation/readme/profilemessage-wireframe-min.png)
+
+
+Profile page with enquiry ticket modal
+
+![wireframe](documentation/readme/profilemodal-wireframe-min.png)
 
 #### Surface Plane
 
