@@ -98,26 +98,58 @@ The following features were identified:
 User stories what were identified, were then linked to feature 'epics'. (There is more on their prioritisation in Agile Methodology section)
 
 | Epic | As a.. | I would like to be able to.. | So that I can.. |
-| -- | -- | -- | -- | -- |
+| -- | -- | -- | -- |
 | *View* | USER | Scroll one main page | Easily learn about what EMERG3D props site offers |
 |  | USER | I can see links to Emerg3D social media | View their social media profiles |
 |  | USER | See a short introduction/description of what Emerg3D | I can Learn about the company |
 | *Site Owner* | ADMIN | Review requests and orders | Manage my business |
-|  | Log in to a secure management account |  Manage my business website and assign moderators to help with uploading and managing content |  |
+|  | ADMIN | Log in to a secure management account |  Manage my business website and assign moderators to help with uploading and managing content |
+|  | ADMIN | Showcase customers photos of their purchases/projects in a gallery | Engage with my followers/audience |
 | *User Features* | USER | Create an account | Interact with blogposts, make purchases and requests |
 | *Checkout and Payments* | USER | Use a trusted payment service when checking out | I can make purchases easily and without worry |
 | *Forms* | ADMIN | Provide users with a form to request a project | I can Make customised orders for customers |
 |  | USER | Sign up for a newsletter | I can Stay up-to-date with Emerg3D |
 | *Customer Support* | ADMIN | Provide contact information to users | Reassure them and provide customer support |
-| | | | |
-| | | | |
-| | | | |
+| *Blog* | ADMIN | publish blog posts to share my current progress, events and products | I can update visitors regularly |
+| | MODERATOR |  Showcase my work and activities, share information | Engage with my followers/audience |
+| *Online Store | ADMIN | Provide multiple sizes for items in the cosplay store | Facilitate more customers |
+|  | USER |save products to a wish list | return to items I like later |
+| none | DEV | Deploy website to Heroku | Link the repository to Heroku with installed dependencies and config vars |
+
+The CRUD functionality of each feature is shown below:
+
+
 
 #### Database Schema
+
+MySQL was used to create the database design.
+
+
+
+As you can see, .............
+Custom user is....
+Blog contains moderator.... Blogpost
+Like and comments use the foreign key
+Shop - product model...
+An order model was initially created however it need order itmm and then order. This will be handled by shopify.
 
 ### Skeleton Plane
 
 #### Wireframes
+Created using Balsamiq
+
+Base Template
+Home Page (blog and store preview - carousel?)
+Blog
+Blogpost
+Store
+Product
+Enquiry page
+Registration page
+Login page
+Profile page (+messages)
+Profile page (+ modal)
+
 
 #### Surface Plane
 
