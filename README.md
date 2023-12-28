@@ -118,20 +118,24 @@ User stories what were identified, were then linked to feature 'epics'. (There i
 
 The CRUD functionality of each feature is shown below:
 
-
+![crud summary](documentation/readme/crud-functionality-min.png)
 
 #### Database Schema
 
 MySQL was used to create the database design.
 
+![screenshot of MySQL diagram](documentation/readme/mysql-database-min.png)
 
+The 'CustomUser' model was adapted from Django's 'AbstractUser' model. All the other models are custom models.
 
-As you can see, .............
-Custom user is....
-Blog contains moderator.... Blogpost
-Like and comments use the foreign key
-Shop - product model...
-An order model was initially created however it need order itmm and then order. This will be handled by shopify.
+In the blog_post model, CustomUser is a foreign key (of one-to-many) however, only users who have the boolean value for 'is_moderator' set to true can create a blog post. This can be toggled on the Admin site by the site owner. 
+
+The enquiry_form model also uses the foreign key of the CustomUser is a one-to-many capacity. The budget was programmed to be optional. When a user selects a country, this is from a prepopulated list of selectable countries stored in a constant.py file of tuples approved by the site owner. 
+
+The product_category model can be linked to the products model. If a category is deleted, there is no CASCADE delete because this could potentially delete many products from the site. Instead, if a product_cetegory is deleted, this value of an individual product that posessed this foreign key defaults to null.
+
+An order model was originally designed. After researching further into creating a checkout, I discovered it would be more optimal to create two models for this purpose - am order_item model AND an order model so that multiples of various items can be added to the order and it is easier to edit. This model has not been implemented as the revised goal is to implement Shopify to handle e-commerce on the site.
+
 
 ### Skeleton Plane
 
