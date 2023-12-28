@@ -89,12 +89,29 @@ The following features were identified:
 | Both | Account profile | 5 | 5 | YES | ✅ |
 | Both | Filter items in store by category | 4 | 4 |  | ✅ |
 
-*In this case Admin/User also refers to authorised users with Moderator=True
-
+*In this case Admin/User refers to authorised users with Moderator=True
 
 ### Structure Plane
 
 #### User Stories
+
+User stories what were identified, were then linked to feature 'epics'. (There is more on their prioritisation in Agile Methodology section)
+
+| Epic | As a.. | I would like to be able to.. | So that I can.. |
+| -- | -- | -- | -- | -- |
+| *View* | USER | Scroll one main page | Easily learn about what EMERG3D props site offers |
+|  | USER | I can see links to Emerg3D social media | View their social media profiles |
+|  | USER | See a short introduction/description of what Emerg3D | I can Learn about the company |
+| *Site Owner* | ADMIN | Review requests and orders | Manage my business |
+|  | Log in to a secure management account |  Manage my business website and assign moderators to help with uploading and managing content |  |
+| *User Features* | USER | Create an account | Interact with blogposts, make purchases and requests |
+| *Checkout and Payments* | USER | Use a trusted payment service when checking out | I can make purchases easily and without worry |
+| *Forms* | ADMIN | Provide users with a form to request a project | I can Make customised orders for customers |
+|  | USER | Sign up for a newsletter | I can Stay up-to-date with Emerg3D |
+| *Customer Support* | ADMIN | Provide contact information to users | Reassure them and provide customer support |
+| | | | |
+| | | | |
+| | | | |
 
 #### Database Schema
 
