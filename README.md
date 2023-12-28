@@ -140,7 +140,7 @@ An order model was originally designed. After researching further into creating 
 ### Skeleton Plane
 
 #### Wireframes
-Created using Balsamiq
+The following wireframes were created using Balsamiq:
 
 Base Template
 
@@ -235,11 +235,24 @@ Sample of Nova Square font:
 
 
 
-#### Photography
+#### Photography and Logo
+
+All the photos used in the products page and for the homepage were taken by Damien Moreau.
+
+The EMERG3D Props logo was created by Damien Moreau using Canva.
 
 ---
 
 ## Agile Methodology 🗃️
+
+This project was developed using Agile methodologies. The information radiator GitHub projects was used to log the user stories. GitHub provides many pre-made labels for this purpose. I created additional labels for my 'project issues'. As previously mentioned, epics were identified across the various user stories, MoSCoW prioritisation was utilised throughout the project and each issue was assigned both an epic label and MoSCoW label (must have, should have, could have or won't have).
+
+
+
+As issues were completed, each was moved from To Do --> In Progress and finally, Done. Unimplemented user stories remain in the 'no status' column.
+
+The development of the project was seperated into four 'sprints'(time boxes). Each sprint was assigned approximately one week. Luckily, sprint 1, 2 and 3 had no leftover issues. After each sprint, issues should be reviewed so that backlog items do not affect the following sprint. Sprint 4 is 50% complete and this is because the development of a checkout was abandoned.
+
 
 ### Sprints
 
