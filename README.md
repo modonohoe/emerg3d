@@ -64,8 +64,8 @@ Although originally, it was hoped that Stripe payment system would be implemente
 
 The following features were identified:
 
-| -- | -- | -- | -- | -- | -- |
 | User Type | Feature | Importance | Viability | MVP | Achieved |
+| -- | -- | -- | -- | -- | -- |
 | Admin | Blog | 5 | 5 | YES  | ✅ |
 | Admin* | View authored blogposts on profile | 5 | 5 |  | ✅ |
 | Admin | Online store | 5 | 5 | YES | ✅ |
