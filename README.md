@@ -50,9 +50,47 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
 
 #### Project Goals
 
+Emerg3D Props is primarily a Business to Consumer (B2C) website. Following on from a successful social media presence of Emerg3D (INSTAGRAM), the site owner would like a platform to engage in longer form communication with followers in the form of blog posts. The site owner would also like to provide an official way for customers to request collaboration and commission projects (currently this is only possible through direct messages on social media) as well as an online store for pre-printed products (divided into the categories of homeware and cosplay items). Another goal for the website is to showcase links to social media pages.
+
+3D printing is a rapidly expanding industry and Emerg3D Prop’s goal is to establish a presence online in Ireland and worldwide.
+
 ### Scope Plane
 
 #### Feature Identification
+
+Planning for the website was undertaken in stages. The first step was meeting with the site owner to find out what they hoped to have delivered and then ranking these requests in order of importance, viability and deciding on the Minimum Viable Product (MVP) they would be happy with.
+
+Although originally, it was hoped that Stripe payment system would be implemented, it was ultimately decided that the solution Shopify would be adopted in the next iteration of the website to handle the site's e-commerce.
+
+The following features were identified:
+
+| -- | -- | -- | -- | -- | -- |
+| User Type | Feature | Importance | Viability | MVP | Achieved |
+| Admin | Blog | 5 | 5 | YES  | ✅ |
+| Admin* | View authored blogposts on profile | 5 | 5 |  | ✅ |
+| Admin | Online store | 5 | 5 | YES | ✅ |
+| Admin | Edit/delete shop items | 5 | 5 | YES | ✅ |
+| Admin | Feature best sellers on homepage | 4 | 3 |  |  |
+| Admin | Gallery | 3 | 4 |  |  |
+| Admin | Social media links | 5 | 5 | YES | ✅ |
+| Admin | Chatbot for customer queries | 1 | 1 |  |  |
+| User | Enquiry form | 5 | 5 | YES | ✅ |
+| User | Wishlist | 3 | 3 |  |  |
+| User | Product reviews | 4 | 3 |  |  |
+| User* | Make blog posts | 4 | 4 |  | ✅ |
+| User | Like and comments on posts | 5 | 5 | YES | ✅ |
+| User | View liked posts on profile | 4 | 4 |  |  |
+| Both | About page | 5 | 5 | YES | ✅ |
+| Both | Secure login and logout | 5 | 5 | YES | ✅ |
+| Both | Enquiry history | 5 | 5 |  | ✅ |
+| Both | Order history | 5 | 3 |  | |
+| Both | Automated confirmation of orders | 4 | 4 |  |  |
+| Both | Payment via Stripe | 4 | 4 |  |  |
+| Both | Account profile | 5 | 5 | YES | ✅ |
+| Both | Filter items in store by category | 4 | 4 |  | ✅ |
+
+*In this case Admin/User also refers to authorised users with Moderator=True
+
 
 ### Structure Plane
 
