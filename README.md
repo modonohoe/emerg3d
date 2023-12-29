@@ -116,11 +116,11 @@ User stories what were identified, were then linked to feature 'epics'. (There i
 |  | USER |save products to a wish list | return to items I like later |
 | none | DEV | Deploy website to Heroku | Link the repository to Heroku with installed dependencies and config vars |
 
-<details>The CRUD functionality of each feature is shown below:
+<details>
+<summary>The CRUD functionality of each feature is shown below:</summary> 
 
-<summary>
 
-![crud summary](documentation/readme/crud-functionality-min.png) </summary> 
+![crud summary](documentation/readme/crud-functionality-min.png) 
 
 </details>
 
