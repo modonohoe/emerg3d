@@ -257,7 +257,95 @@ The development of the project was seperated into four 'sprints'(time boxes). Ea
 
 ### Current Features
 
+The website currently has a homepage with a carousel. The template for this Bootstrap page layout was adopted from [w3schools](https://www.w3schools.com/bootstrap/bootstrap_templates.asp)
+
+![homepage](documentation/readme/homepage-feature.png)
+
+
+The about us section gives the user information about the services offered and a 'face' behind the business.
+
+![about us](documentation/readme/about-feature.png)
+
+
+
+The shop feature begins with the disclaimer that payment on the website is not yet possible. The sorting and filtering bars appear above the products as well as a pagination to move onto a new page every 6 items. 
+
+![disclaimer and search bars](documentation/readme/shop-disclaimer-sorting-feature.png)
+
+There are hover effects on the 'see all' button and when the user hovers over a product card. This hover effect also feature  on the Nav bar and home logo
+
+![hover feature](documentation/readme/hover-on-nav1.png)
+![hover feature2](documentation/readme/hover-on-nav2.png)
+
+
+
+
+The Emerg3D blog has a preview image for each blog entry and displays the authors name and when they posted. The blog titles are clickable links to bring up the full post.
+
+![blog page](documentation/readme/emerged-blog-feature.png)
+
+
+
+Permission to grant access for moderators can be done via the admin page. Moderators can create, update and delete blogs. 
+
+![permission screenshot for blogs](documentation/readme/django-permissions.png)
+![moderator permission](documentation/readme/is-moderator.png)
+
+
+Blogs are rendered by their unique slug (which is generated from the title). 
+Below the blog content, users can 'like' the post and also see a tally of the comments.
+
+![blog buttons](documentation/readme/blog-tally.png)
+
+
+Only authenticated users can leave comments or make enquiries which adds a level of identification to the poster and can mitigate spam or trolling messages.
+
+![authenticated commenters](documentation/readme/form-condition.png)
+
+
+The enquiry ticket feature include 5 input fields, one being a calendar. If a date in the past or a non-date is entered, this will be flagged and the user is prompted to re-enter a date. The available countries were chosen by the site owner and users cannot just type in any country.
+
+![enquiry form feature](documentation/readme/enquiry-form.png)
+
+
+User's profile page has a welcome message with their email address displayed so they know where to expect communication from Emerg3D. Active tickets are also displayed with either - pending or accepted status. Is tickets have been accepted by Admin via the admin site, the ticket are no longer editable by the user.
+
+![profile page feature](documentation/readme/ticket-submitted.png)
+
+![pending vs accepted forms](documentation/readme/tickets.png)
+
+
+There are two modals for the profile page - one for editing tickets and one for deleting. 
+
+![modals](documentation/readme/modal-feature.png)
+
+
+Safety features of the website include non-authenticated users being forbidden from accessing the enquiry form and Django's built-in password authentification features. I did have to specify that multiple accounts could not be created with the same email address because in the beginning this was possible! 
+
+![defensive programming features](documentation/readme/email-taken.png)
+![defencsive email feature](documentation/readme/unique-email.png)
+
+
+The final nav bar list item changes depending on who is logged in or if they are logged in. This is coded with a 'if' statement in the base.html template and so applies to all pages.
+
+![nav bar profile](documentation/readme/list-item-navbar.png)
+
+
+Lastly the footer has been coded to only appear after the full height of the body has been seen so there is no overlap but it remains fixed like a sticky footer.
+
+![footer before](documentation/readme/bad-footer.png) ![footer after](documentation/readme/good-footer.png)
+
 ### Future Features
+
+The site owner would like to see implementation of Shopify for e-commerce, a gallery, a chatbot and a bestseller section on the homepage.
+
+As a developer, future features I would like to include are:
+- a 'liked blogposts' tab on user's profiles
+- further security measures for login and registration
+- log in via social accounts Google Account etc
+- password reset option
+- automated emails for both admin and user when a ticket is submitted
+- review feature for the shop
 
 ---
 
