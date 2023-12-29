@@ -32,7 +32,7 @@ EMERG3D Props is a 3D printing business. This is their website (1st itertion mad
   * [Database](#database)
   * [Frameworks](#frameworks)
   * [Libraries & Packages](#libraries--packages)
-  * [Programs](#programs)
+  * [Tools](#tools)
 * [Testing](#testing) 📝
 * [Bugs and Fixes](#bugs-and-fixes) 🛠️
 * [Deployment](#deployment) 🖥️
@@ -122,9 +122,9 @@ User stories what were identified, were then linked to feature 'epics'. (There i
 
 #### Database Schema
 
-MySQL was used to create the database design.
+DrawSQL was used to create the database design.
 
-![screenshot of MySQL diagram](documentation/readme/mysql-database-min.png)
+![screenshot of DrawSQL diagram](documentation/readme/mysql-database-min.png)
 
 The 'CustomUser' model was adapted from Django's 'AbstractUser' model. All the other models are custom models.
 
@@ -353,17 +353,60 @@ As a developer, future features I would like to include are:
 
 ### Languages
 
+* [HTML](https://html.spec.whatwg.org/multipage/)
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
 ### Database
+
+* [ElephantSQL](https://www.elephantsql.com/) a PostgreSQL relational database was used to store the data for this project.
+* [Cloudinary](https://cloudinary.com/) for storing database images
+
+Migrations to the database were made using the following commands:
+
+`python3 manage.py makemigrations`
+
+`python3 manage.py migrate`
 
 ### Frameworks
 
+* [Bootstrap 3](https://getbootstrap.com/docs/3.3/) for styling
+* [Django](https://www.djangoproject.com/)
+
 ### Libraries & Packages
 
-### Programs
+* [Code Anywhere](https://app.codeanywhere.com/) IDE
+* django-crispy-forms (Library)
+* gunicorn (Web Server)
+* psycopg2-binary (Library)
+* django-allauth (Library)
+
+All of the requirements can be found here:
+[Requirements File](/requirements.txt)
+It was created using the command `pip3 freeze > requirements.txt`
+
+
+### Tools
+
+* [GitHub]() hosting the repository
+* [Django Secret Key Generator](https://djecrety.ir/)
+* [Compress or Die](https://compress-or-die.com/webp) to convert images to webp (honorary mention to Optimizilla but it wasn't enough!)
+* [DrawSQL](https://drawsql.app/teams/emerg3d/diagrams/emerg3d) to make the database diagram
+* [Google dev tools](https://developer.chrome.com/docs/devtools/) for debugging
+* [Balsamiq](https://balsamiq.com/wireframes/) wireframes
+* [favicon.io](https://favicon.io/) generate favicon
+* [Font Awesome](https://fontawesome.com/) symbols
+* [Google Fonts](https://fonts.google.com/)
+* [W3schools](https://www.w3schools.com/)
+* [Stack Overflow](https://stackoverflow.com/)
 
 ---
 
 ## Testing 📝
+
+Extensive testing was conducted throughout the development process and can be viewed here:
+[Testing Document](/TESTING.md)
 
 ---
 
@@ -493,25 +536,54 @@ As a developer, future features I would like to include are:
 | References: | n/a |  
 | Status: | Unresolved |-->
 
-<!-- 
-![f](documentation/readme)
-
-<!-- | Preview Bug | Details |
-| -------- | -------- |
-| Description: |  |
-| Steps to reproduce: |  |
-| Expected behaviour: |  |
-| Actual behaviour: |  |
-| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
-| Possible causes: |  |
-| Additional information: |  |
-| Steps to fix: |  |
-| References: |  |  
-| Status: | Resolved ✅ |-->
-
 ---
 
 ## Deployment 🖥️
+
+- Create a new repo on GitHub using the CI template.
+- Create your new app in Heroku.
+- Create an ElephantSQL account.
+- Create a new 'instance'.
+- Select the closest database to use (mine was West of Ireland)
+- Name the instance after your project.
+- A database url is generated which you need to add to Heroku and your env.py file (remember to git.ignore this)
+- Create a cloudinary account.
+- Get the url from your dashboard and add this to your Heroku Config Vars also.
+- You will also need to generate a secret key and add this.
+* Go to the Resources tab on Heroku and select Heroku Postgres
+* Navigate to the Deploy tab
+* Click on Connect to your Github account and search for your repository.
+* Navigate to the Settings tab and double check your Config Vars (set COLLECT_STATIC = 0) for deployment
+* Go to the Deploy tab and choose the main branch for deploying (enable automatic deployment so every time you push from GitHub your app is deployed)
+* While developing your project, have Debug = True but once you launch your project Debug must be set to False for security reasons.
+
+If your IDE stops working for some reason.. You will need to clone the repository from GitHub:
+- In your IDE open a terminal (e.g Git Bash)
+- Enter the command git clone followed by the copied URL
+- Setup a venv with thw command `python3 -m venv venv`
+- Next, run it with `source venv/bin/activate`
+- Install the requirements with `pip3 install -r requirements.txt`
+- 
+You will need to create a .gitignore file and add these files to it:
+- env.py
+- venv/
+
+Your env.py file must include:
+
+`import os`
+
+`os.environ['DEV'] = '1'`
+
+`os.environ['ALLOWED_HOST'] = (The URL of the development environment, without the 'https://' and the trailing '/')`
+
+`os.environ['CLIENT_ORIGIN'] = (The URL of the development environment, including the 'https://' but without the trailing '/')`
+
+`os.environ['CLOUDINARY_URL'] = (The URL for Cloudinary, that was retrieved in the earlier steps)`
+
+`os.environ['DATABASE_URL'] = (The Database URL retrieved from the earlier steps)`
+
+`os.environ['SECRET_KEY'] = (Create a secret key to be used for the Django backend)`
+
 
 ---
 
