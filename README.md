@@ -117,8 +117,12 @@ User stories what were identified, were then linked to feature 'epics'. (There i
 | none | DEV | Deploy website to Heroku | Link the repository to Heroku with installed dependencies and config vars |
 
 <details>The CRUD functionality of each feature is shown below:
+
 <summary>
-![crud summary](documentation/readme/crud-functionality-min.png) </summary> </details>
+
+![crud summary](documentation/readme/crud-functionality-min.png) </summary> 
+
+</details>
 
 #### Database Schema
 
@@ -608,6 +612,7 @@ Your env.py file must include:
 * [Tech With Tim's](https://www.youtube.com/watch?v=z4lfVsb_7MA&ab_channel=TechWithTim)'s Django series on YouTube
 * [Codemy](https://www.youtube.com/watch?v=Cp7geK7xjyI&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50&index=5&ab_channel=Codemy.com) ecommerce videos greatly helped with setting up my shop app.
 * I customised W3school's Bootstrap template with carousel and hamburger menu.
+* [Jonathan Moreau](https://www.linkedin.com/in/moreaujonathan/) who surveyed my project with his SEO expertise and recommended the final 'about' section lay out and placement and content of heading elements.
 
 ### Content
 
