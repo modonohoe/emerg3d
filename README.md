@@ -128,69 +128,59 @@ MySQL was used to create the database design.
 
 The 'CustomUser' model was adapted from Django's 'AbstractUser' model. All the other models are custom models.
 
-In the blog_post model, CustomUser is a foreign key (of one-to-many) however, only users who have the boolean value for 'is_moderator' set to true can create a blog post. This can be toggled on the Admin site by the site owner. 
+In the blog_post model, CustomUser is a foreign key (of one-to-many) however, only users who have the boolean value for 'is_moderator' set to true can create a blog post. This can be toggled on the Admin site by the site owner.
 
-The enquiry_form model also uses the foreign key of the CustomUser is a one-to-many capacity. The budget was programmed to be optional. When a user selects a country, this is from a prepopulated list of selectable countries stored in a constant.py file of tuples approved by the site owner. 
+The enquiry_form model also uses the foreign key of the CustomUser is a one-to-many capacity. The budget was programmed to be optional. When a user selects a country, this is from a prepopulated list of selectable countries stored in a constant.py file of tuples approved by the site owner.
 
 The product_category model can be linked to the products model. If a category is deleted, there is no CASCADE delete because this could potentially delete many products from the site. Instead, if a product_cetegory is deleted, this value of an individual product that posessed this foreign key defaults to null.
 
 An order model was originally designed. After researching further into creating a checkout, I discovered it would be more optimal to create two models for this purpose - am order_item model AND an order model so that multiples of various items can be added to the order and it is easier to edit. This model has not been implemented as the revised goal is to implement Shopify to handle e-commerce on the site.
 
-
 ### Skeleton Plane
 
 #### Wireframes
+
 The following wireframes were created using Balsamiq:
 
 Base Template
 
 ![wireframe for base template](documentation/readme/base-wireframe-min.png)
 
-
 Home Page
 
 ![wireframe for homepage](documentation/readme/index-wireframe-min.png)
-
 
 Blog
 
 ![wireframe for blog page](documentation/readme/blog-wireframe-min.png)
 
-
 Blogpost
 
 ![wireframe for individual blogpost](documentation/readme/blogpost-wireframe-min.png)
-
 
 Store
 
 ![wireframe for shop](documentation/readme/shop-wireframe-min.png)
 
-
 Product
 
 ![wireframe for product page](documentation/readme/product-wireframe-min.png)
-
 
 Enquiry page
 
 ![wireframe for enquiry page](documentation/readme/enquiry-wireframe-min.png)
 
-
 Registration page
 
 ![wireframe for registration page](documentation/readme/registration-wireframe-min.png)
-
 
 Login page
 
 ![wireframe for login](documentation/readme/login-wireframe-min.png)
 
-
 Profile page featuring Django Messages alert
 
 ![wireframe for profile page with alerts](documentation/readme/profilemessage-wireframe-min.png)
-
 
 Profile page with enquiry ticket modal
 
@@ -210,7 +200,6 @@ The colors were then imported into the base.css page and assigned as root colors
 
 ![root-colors](documentation/readme/color-palette.png)
 
-
 #### Fonts
 
 Horta
@@ -223,7 +212,6 @@ The headline font 'Horta' is used in the company logo and has an open font licen
 Sample of Horta font:
 ![Horta sample](documentation/readme/horta-sample.png)
 
-
 Nova Square
 
 The body font 'Nova Square' was chosen for its striking simplicity. It was created by the famous stonemason [Wojciech Kalinowski](http://www.identifont.com/show?3DQU)
@@ -232,8 +220,6 @@ The body font 'Nova Square' was chosen for its striking simplicity. It was creat
 
 Sample of Nova Square font:
 ![Nova Square sample](documentation/readme/nova-font.png)
-
-
 
 #### Photography and Logo
 
@@ -245,16 +231,25 @@ The EMERG3D Props logo was created by Damien Moreau using Canva.
 
 ## Agile Methodology 🗃️
 
-This project was developed using Agile methodologies. The information radiator GitHub projects was used to log the user stories. GitHub provides many pre-made labels for this purpose. I created additional labels for my 'project issues'. As previously mentioned, epics were identified across the various user stories, MoSCoW prioritisation was utilised throughout the project and each issue was assigned both an epic label and MoSCoW label (must have, should have, could have or won't have).
+This project was developed using Agile methodologies. The information radiator 'GitHub projects' was used to log the user stories. GitHub provides many pre-made labels for this purpose and you can 'view-by' filter these at any time. As seen here when filtered by '1st Sprint' (The 1st sprint issues may also be viewd in 'milestones'). I found this tool very helpful in keeping track of schedule during the development of this project.
 
+![Github filtered by feature](documentation/readme/sprint1-viewby-min.png)
 
+I created additional labels for my 'project issues'. Issues may also be assigned to certain members of a team. I became aware later on in the project that issue numbers can be directly linked in commit messages which I will implement in future projects as this helps track progression even further.
 
-As issues were completed, each was moved from To Do --> In Progress and finally, Done. Unimplemented user stories remain in the 'no status' column.
+![Github project labels default and customised](documentation/readme/github-labels-min.png)
+
+As previously mentioned, epics were identified across the various user stories, MoSCoW prioritisation was utilised throughout the project and each issue was assigned both an epic label and MoSCoW label (must have, should have, could have or won't have). As issues were completed, each was moved from To Do --> In Progress and finally --> Done on the KanBan board. Unimplemented user stories remain in the 'no status' column.
+
+![Github kanban board](documentation/readme/kanban-min.png)
+
+The [GitHub project](https://github.com/users/modonohoe/projects/2) for this project is publicly available at on my GitHub profile.
+
+### Sprints
 
 The development of the project was seperated into four 'sprints'(time boxes). Each sprint was assigned approximately one week. Luckily, sprint 1, 2 and 3 had no leftover issues. After each sprint, issues should be reviewed so that backlog items do not affect the following sprint. Sprint 4 is 50% complete and this is because the development of a checkout was abandoned.
 
-
-### Sprints
+![Projects sprints](documentation/readme/sprints-min.png)
 
 ---
 
@@ -376,6 +371,40 @@ The development of the project was seperated into four 'sprints'(time boxes). Ea
 
 </details>
 
+<details>
+<summary> Bug: Summernote Admin view</summary>
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | Broken link appearing for Admin summernote view |
+| Steps to reproduce: | Install the same versions of requirements in requirement.txt. Apply summernote field to text area in the blog model in models.py |
+| Expected behaviour: | WYSIWYG editor for blogposts to appear in Admin view |
+| Actual behaviour: | This was not loading and appeared to be broken: ![broken summernotelink](documentation/readme/admin-summernote-error.png) |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
+| Possible causes: | Django and summernote versions |
+| Additional information: | n/a |
+| Steps to fix: | In settings.py enter ```X-FRAME-OPTIONS``` as SAMEORIGIN:<br>![X-FRAME OPTIONS code to fix bug with summernote](documentation/readme/x-frame-options.png)  |
+| References: | This solution was given to me by Tutor Support who had encountered it before but rarely and said it was due to the versions of Django and Summernote |  
+| Status: | Resolved ✅ |
+
+</details>
+
+<details>
+<summary> Bug: Successful deletion message</summary>
+
+| Preview Bug | Details |
+| -------- | -------- |
+| Description: | On the profile page, when users edit their tickets, they received a 'ticket edit was a success' message that appears on the page via Django Messages. I have coded one for succesful deletion too but this does not appear. |
+| Steps to reproduce: | In my Javascript deleteTicket function (see accounts app, profile.html file), success should display a message to the user. |
+| Expected behaviour: | The same as for successful edit and comment:<br>![success message](documentation/readme/success-message.png) |
+| Actual behaviour: | All of the Javascript function performs its task, the ticket is deleted, the page is refreshed but the success message does not show. |
+| Environment: | Operating system: Windows 11<br>IDE: Code Anywhere<br>Browser: Chrome Version 120.0.6099.71 |
+| Possible causes: | unknown |
+| Additional information: | I used DiffChecker to see if the Edit and Delete success functions were both the same and they are:<br>![diffchecker reference for deletion bug](documentation/readme/diff-checker.png) |
+| Steps to fix: | n/a |
+| References: | n/a |  
+| Status: | Unresolved |-->
+
 <!-- 
 ![f](documentation/readme)
 
@@ -389,7 +418,8 @@ The development of the project was seperated into four 'sprints'(time boxes). Ea
 | Possible causes: |  |
 | Additional information: |  |
 | Steps to fix: |  |
-| References: |  |  -->
+| References: |  |  
+| Status: | Resolved ✅ |-->
 
 ---
 
