@@ -599,8 +599,34 @@ Your env.py file must include:
 
 ### Code
 
+* Code Institute's 'I Think Therefore I Blog' walkthrough series formed the basis for a lot of my code - particularly in the blog app.
+* Bootstrap documentation - particularly for messages and buttons.
+* Django's documentation - particularly on the AbstractUser model.
+* JQuery module from Code Institute
+* Tutor Support was invaluable to me during this project.
+* My friends in CI #community-dublin who helped me to get my Modals working.
+* [Tech With Tim's](https://www.youtube.com/watch?v=z4lfVsb_7MA&ab_channel=TechWithTim)'s Django series on YouTube
+* [Codemy](https://www.youtube.com/watch?v=Cp7geK7xjyI&list=PLCC34OHNcOtpRfBYk-8y0GMO4i1p1zn50&index=5&ab_channel=Codemy.com) ecommerce videos greatly helped with setting up my shop app.
+* I customised W3school's Bootstrap template with carousel and hamburger menu.
+
 ### Content
+
+All of the photos and 3D products on this site were made by Damien Moreau at EMERG3D Props.
+
+The logo was made with Canva.
+
+All of the Star Wars items are fan-made and not licensed products.
 
 ### Media
 
+The default image for blogposts is supplied by Cloudinary.
+
 ### Acknowledgments
+
+* First and foremost I would like to thank Damien Moreau for inspiring me every day with his passion, currently for 3D printing, and his unwavering support for me in this new journey into coding (and for the countless coffees)
+  
+* My CI mentor Can Sücüllü for reminding me to stay focused on the big picture.
+  
+* All of my friends at Code Institute for the moral support and great experiences leading up to and during the development of this project. Also the faculty at Code Institute for all the support and education.
+
+* My friends and family who took the time to test the website and give me their feedback, I am so grateful ❤️
