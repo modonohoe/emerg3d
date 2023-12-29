@@ -35,7 +35,7 @@
             {% if user.is_authenticated %}
             <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline-block">
                 {% csrf_token %}
-                <button class="btn btn-lg" type="submit" name="blogpost_id" value="{{post.slug}}">
+                <button class="btn btn-lg" type="submit" name="blogpost_id" value="{{post.slug}}" id="like button" aria-labelledby="clickable like button heartshaped">
                     {% if liked %}
                     <i class="fas fa-heart"></i> <!-- Liked State -->
                     {% else %}
@@ -51,7 +51,7 @@
         </div>
         <div class="col-xs-6 text-center">
             {% with comments.count as total_comments %}
-            <a href="#comments-section" class="btn btn-lg custom-text-black">
+            <a href="#comments-section" class="btn btn-lg custom-text-black" id="comments button" aria-label="comments tally">
                 <i class="far fa-comments"></i>
             </a><br>
             <span class="text-secondary">{{ total_comments }}</span>
@@ -84,10 +84,10 @@
         <div class="col-md-8 col-md-offset-1 col-sm-12">
             <h3>Leave a comment:</h3>
             <p class="custom-text-white">(Commenting as: {{ user.username }})</p>
-            <form method="post">
+            <form method="post" class="custom-text-white">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-lg">Submit</button>
+                <button type="submit" class="btn btn-lg" aria-labelledby="submit button for comments">Submit</button>
             </form>
         </div>
     </div>

@@ -256,7 +256,7 @@ h4 {
 
 /*------ buttons ------------------------------------*/
 .btn-lg {
-    color: var(--accent-color);
+    color: #670c10;
     padding: 1.5rem;
     margin: 2rem;
     transition: box-shadow 0.3s ease;
