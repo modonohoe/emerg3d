@@ -27,7 +27,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['emerg3d-426f1031de84.herokuapp.com',
                  '8000-modonohoe-emerg3d-em7td1rpq3.us2.codeanyapp.com']
