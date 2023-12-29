@@ -398,8 +398,14 @@ It was created using the command `pip3 freeze > requirements.txt`
 * [favicon.io](https://favicon.io/) generate favicon
 * [Font Awesome](https://fontawesome.com/) symbols
 * [Google Fonts](https://fonts.google.com/)
-* [W3schools](https://www.w3schools.com/)
-* [Stack Overflow](https://stackoverflow.com/)
+* [W3schools](https://www.w3schools.com/) to go over forgotten basics - especially CSS shorthands
+* [Stack Overflow](https://stackoverflow.com/) for general coding queries
+* [Code Institute](https://pep8ci.herokuapp.com/) Python linter
+* [JSHint](https://jshint.com/) Javascript linter
+* [W3C](https://jigsaw.w3.org/css-validator/#validate_by_uri) CSS validator
+* [W3C](https://validator.w3.org/#validate_by_uri+with_options) HTML validator
+* [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) for accessibility testing
+
 
 ---
 
