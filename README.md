@@ -1,6 +1,6 @@
 # EMERG3D Props
 
-![EMERG3D website preview](documentation/readme/am-i-responsive.png)
+![EMERG3D header](documentation/readme/emerged-header.png)
 
 EMERG3D Props is a 3D printing business. This is their website (1st itertion made for my Portfolio Project 4 for Code Institute)
 
