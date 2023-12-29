@@ -1,6 +1,11 @@
 {% load static %}
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div
+  id="myCarousel"
+  class="carousel slide"
+  aria-labelledby="carouselheading"
+  data-ride="carousel"
+>
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -9,30 +14,49 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img
-                src="{% static 'images/commando-header.jpg' %}"
-                alt="3d printed mask costume">
-            <div class="carousel-caption">
-                <p><a class="custom-text-white" href="{% url 'blogposts' %}">Checkout out our blog for the latest news</a></p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="{% static 'images/store-header.png' %}" alt="Image">
-            <div class="carousel-caption">
-                <p><a class="custom-text-white" href="{% url 'shop' %}">Browse our latest products</a></p>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="{% static 'images/hero-image-2-min.png' %}" alt="New Image Description">
-            <div class="carousel-caption">
-                <p><a class="custom-text-white" href="{% url 'create_ticket' %}">Commission a project</a></p>
-            </div>
-        </div>
+  <div class="carousel-inner" aria-labelledby="carouselimages" role="listbox">
+    <div class="item active">
+      <img
+        src="{% static 'images/commando-header.webp' %}"
+        alt="photograph of a man wearing a fully 3d printed star wars cosplay costume as the Republic Commando character"
+      />
+      <div class="carousel-caption">
+        <p>
+          <a class="custom-text-white" href="{% url 'blogposts' %}"
+            >Checkout out our blog for the latest news</a
+          >
+        </p>
+      </div>
     </div>
+
+    <div class="item">
+      <img
+        src="{% static 'images/store-header.webp' %}"
+        alt="photograph of a 3d printed owl-shaped lamp with wings made of light being projected behind"
+      />
+      <div class="carousel-caption">
+        <p>
+          <a class="custom-text-white" href="{% url 'shop' %}"
+            >Browse our latest products</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img
+        src="{% static 'images/hero-image-2-min.webp' %}"
+        alt="photograph of Damien from behind spraying paint on a 3d printed item in the garden"
+      />
+      <div class="carousel-caption">
+        <p>
+          <a class="custom-text-white" href="{% url 'create_ticket' %}"
+            >Commission a project</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- Left and right controls -->
   <a

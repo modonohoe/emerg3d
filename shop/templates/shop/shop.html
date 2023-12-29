@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block title %}Shop{% endblock %}
 
@@ -8,79 +8,102 @@
 
 <h1>Our Products</h1>
 <div class="container-fluid">
-    <div class="well text-center">
-        <p>🛠️ We are in the process of incorporating Shopify to add a checkout to our site. 🛠️<br>In the meantime if you would like any of the items in our shop, please contact Damien via email.</p>
-    </div>
+  <div class="well text-center">
+    <p>
+      🛠️ We are in the process of incorporating Shopify to add a checkout to our
+      site. 🛠️<br />In the meantime if you would like any of the items in our
+      shop, please contact Damien via email.
+    </p>
+  </div>
 
-    <!-- Filtering and Sorting -->
-    <div class="row-fluid">
-        <div class="col-md-6 p2 m2" >
-            <select id="filter-category" class="form-control" onchange="filterProducts()">
-                <option value="">Select Category</option>
-                {% for category in categorys %}
-                <option value="{{ category.name }}">{{ category.name }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-6 p2 m2">
-            <select id="sort-products" class="form-control" onchange="sortProducts()">
-                <option value="">Sort By</option>
-                <option value="price">Price</option>
-                <option value="name">Name</option>
-            </select>
-        </div>
+  <!-- Filtering and Sorting -->
+  <div class="row-fluid">
+    <div class="col-md-6 p2 m2">
+      <select
+        id="filter-category"
+        class="form-control"
+        aria-label="filter by category"
+        onchange="filterProducts()"
+      >
+        <option value="">Select Category</option>
+        {% for category in categorys %}
+        <option value="{{ category.name }}">{{ category.name }}</option>
+        {% endfor %}
+      </select>
     </div>
+    <div class="col-md-6 p2 m2">
+      <select
+        id="sort-products"
+        class="form-control"
+        aria-label="sort by price"
+        onchange="sortProducts()"
+      >
+        <option value="">Sort By</option>
+        <option value="price">Price</option>
+        <option value="name">Name</option>
+      </select>
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid">
-    {% for product in products %}
-    <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="thumbnail-wrapper">
-            <div class="image-container">
-                <img src="{{ product.image.url }}" alt="{{ product.image_alt_text }}" class="thumbnail-image">
-            </div>
-            <div class="caption">
-                <h2 class="preview-heading tall-text custom-text-black">{{ product.name }}</h2>
-                <a class="custom-text-black btn btn-info" href="{% url 'product_details' product.id %}">See all product details</a>
-                <p>Price: €{{ product.price }}</p>
-            </div>
-        </div>
+  {% for product in products %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="thumbnail-wrapper">
+      <div class="image-container">
+        <img
+          src="{{ product.image.url }}"
+          alt="{{ product.image_alt_text }}"
+          class="thumbnail-image"
+        />
+      </div>
+      <div class="caption">
+        <h2 class="preview-heading tall-text custom-text-black">
+          {{ product.name }}
+        </h2>
+        <a
+          class="custom-text-black btn btn-info"
+          href="{% url 'product_details' product.id %}"
+          >See all product details</a
+        >
+        <p>Price: €{{ product.price }}</p>
+      </div>
     </div>
-    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 <div class="container-fluid center-pagination">
-    <div class="pagination text-center">
-        <div class="text-center">
-            <div class="step-links">
-                {% if products.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ products.previous_page_number }}">previous</a>
-                {% endif %}
+  <div class="pagination text-center">
+    <div class="text-center">
+      <div class="step-links">
+        {% if products.has_previous %}
+        <a href="?page=1">&laquo; first</a>
+        <a href="?page={{ products.previous_page_number }}">previous</a>
+        {% endif %}
 
-                <div class="current custom-text-white">
-                    Page {{ products.number }} of {{ products.paginator.num_pages }}
-                </div>
-
-                {% if products.has_next %}
-                <a href="?page={{ products.next_page_number }}">next</a>
-                <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            </div>
+        <div class="current custom-text-white">
+          Page {{ products.number }} of {{ products.paginator.num_pages }}
         </div>
-    </div>
-</div>
 
+        {% if products.has_next %}
+        <a href="?page={{ products.next_page_number }}">next</a>
+        <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- reload the page with the selected query parameters.-->
 <script>
-    function filterProducts() {
-        var category = document.getElementById('filter-category').value;
-        window.location.href = `?category=${category}`;
-    }
-    function sortProducts() {
-        var sort = document.getElementById('sort-products').value;
-        window.location.href = `?sort_by=${sort}`;
-    }
+  function filterProducts() {
+    var category = document.getElementById("filter-category").value;
+    window.location.href = `?category=${category}`;
+  }
+  function sortProducts() {
+    var sort = document.getElementById("sort-products").value;
+    window.location.href = `?sort_by=${sort}`;
+  }
 </script>
 
 {% endblock %}

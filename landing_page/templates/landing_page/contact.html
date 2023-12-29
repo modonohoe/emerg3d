@@ -1,18 +1,25 @@
 {% load static %}
 
 <div>
-    <p class="red-outline-textbox full-width custom-text-white text-center">Contact Information</p>
+  <p class="red-outline-textbox full-width custom-text-white text-center">
+    Contact Information
+  </p>
 </div>
 <div class="panel panel-default text-center">
   <div class="panel-body">
     <div>
-        <br><p>For general queries.</p>
-        <p>
-            To enquire about a project, please open a
-            <a href="{% url 'create_ticket' %}">ticket</a> instead.
-        </p>
-        <p>Email: emerg3dprops@gmail.com</p>
-        <p>Phone: (+44) 123-4567</p>
+      <br />
+      <p>For general queries.</p>
+      <p>
+        To enquire about a project, please open a<strong>
+          <a href="{% url 'create_ticket' %}" class="custom-text-white"
+            >ticket</a
+          ></strong
+        >
+        instead.
+      </p>
+      <p>Email: emerg3dprops@gmail.com</p>
+      <p>Phone: (+44) 123-4567</p>
     </div>
   </div>
 </div>

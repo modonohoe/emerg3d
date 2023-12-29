@@ -1,64 +1,96 @@
 {% load static %}
 
 <div class="panel panel-default text-center">
-    <div class="row-fluid">
-        <h1>EMERG3D Props, prop maker</h1>
-        <div class="about-section">
-            <div class="about-box">
-                <h2>Premier destination for 3D-print creation</h2>
-                <p>Emerg3D Props was born out of a unique passion and a deep-seated desire to join the prestigious 501st Legion.
-                    Faced
-                    with
-                    a lack of choices in Europe, I took the initiative to invest in a revolutionary technology: 3D printing. What
-                    began
-                    as a
-                    project to create just one costume quickly blossomed into an all-consuming passion for 3D printing.
-                </div>
-            <div class="about-box">
-                <p><img class="about-image" src="/static/images/darth-revan-cosplay-dual-saber.jpg" alt="photo of Darth Revan cosplayer, close up shot with two lightsabers, red and purple, reflecting on the black mask"></p>
-            </div>
-        </div>
+  <div class="row-fluid">
+    <h1>EMERG3D Props, prop maker</h1>
+    <div class="about-section">
+      <div class="about-box">
+        <h2>Premier destination for 3D-print creation</h2>
+        <p>
+          Emerg3D Props was born out of a unique passion and a deep-seated
+          desire to join the prestigious 501st Legion. Faced with a lack of
+          choices in Europe, I took the initiative to invest in a revolutionary
+          technology: 3D printing. What began as a project to create just one
+          costume quickly blossomed into an all-consuming passion for 3D
+          printing.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <p>
+          <img
+            class="about-image"
+            src="/static/images/darth-revan-cosplay-dual-saber.webp"
+            alt="photo of Darth Revan cosplayer, close up shot with two lightsabers, red and purple, reflecting on the black mask"
+          />
+        </p>
+      </div>
     </div>
-    <div class="row-fluid about-divider">
-        <div class="about-section custom-text-black">
-            <div class="about-box">
-                <p><img class="about-image" src="/static/images/custom-made-cosplay.jpg" alt="the owner Damien pointing to the computer screen of the open customisation app showing a 3d rendered body dummy for measurements"></p>
-            </div>
-            <div class="about-box">
-                <h2 class="custom-text-black">Custom Cosplay on Demand</h2>
-                <p>Today, Emerg3D Props specializes in creating custom-designed cosplay products, offering a diverse range of costumes,
-                    props, helmets and accessories tailored to individual orders. Our commitment to quality is evident in every
-                    commission,
-                    where design meets functionality to bring your dream cosplay to life. Each product, meticulously crafted, reflects
-                    our
-                    dedication to exceptional design and quality. Whether you're a cosplay enthusiast seeking a bespoke costume or
-                    looking
-                    for unique props, Emerg3D Props is your go-to destination, where your imagination is transformed into tangible,
-                    extraordinary creations.</p>
-                    <button class="about-button"><a class="custom-text-black" href="{% url 'create_ticket' %}">enquiry page</a></button>
-            </div>
-        </div>
+  </div>
+  <div class="row-fluid about-divider">
+    <div class="about-section custom-text-black">
+      <div class="about-box">
+        <p>
+          <img
+            class="about-image"
+            src="/static/images/custom-made-cosplay.webp"
+            alt="the owner Damien pointing to the computer screen of the open customisation app showing a 3d rendered body dummy for measurements"
+          />
+        </p>
+      </div>
+      <div class="about-box">
+        <h2 class="custom-text-black">Custom Cosplay on Demand</h2>
+        <p>
+          Today, Emerg3D Props specializes in creating custom-designed cosplay
+          products, offering a diverse range of costumes, props, helmets and
+          accessories tailored to individual orders. Our commitment to quality
+          is evident in every commission, where design meets functionality to
+          bring your dream cosplay to life. Each product, meticulously crafted,
+          reflects our dedication to exceptional design and quality. Whether
+          you're a cosplay enthusiast seeking a bespoke costume or looking for
+          unique props, Emerg3D Props is your go-to destination, where your
+          imagination is transformed into tangible, extraordinary creations.
+        </p>
+        <button class="about-button">
+          <a class="custom-text-black" href="{% url 'create_ticket' %}"
+            >enquiry page</a
+          >
+        </button>
+      </div>
     </div>
-    <div class="row-fluid">
-        <div class="about-section">
-            <div class="about-box">
-                <h2>3D Printed Homeware</h2>
-                <p>At Emerg3D Props, our passion for 3D printing extends beyond cosplay, diving into the realm of home decor with our
-                unique collection of 3D-printed homeware. Each item in our collection is a masterpiece of design, transforming
-                everyday
-                home essentials into personalized art pieces. Our dedication to innovative printing techniques allows us to offer a
-                range of decor items, from intricate light fixtures to bespoke gifts, each infused with a personal touch. This
-                collection not only exemplifies our commitment to quality and creativity but also offers a way to bring a piece of
-                art
-                into the comfort of your home. Whether you're looking for a special gift or a personalised accent to brighten your
-                living space, our 3D-printed homeware collection offers a fusion of functionality and artistic design, elevating
-                your
-                home with a unique, printed charm.</p>
-                <button class="about-button"><a class="custom-text-black" href="{% url 'shop' %}">shopping page</a></button>
-            </div>
-            <div class="about-box">
-                <p><img class="about-image" src="/static/images/homeware-3dplant-pot.jpg" alt="photo of two 3d printed plant pots which have been spray painted. One is spidermans head the other is gwen, or spiderwoman. Each plant pot has a large spider plant in it."></p>
-            </div>
-        </div>
+  </div>
+  <div class="row-fluid">
+    <div class="about-section">
+      <div class="about-box">
+        <h2>3D Printed Homeware</h2>
+        <p>
+          At Emerg3D Props, our passion for 3D printing extends beyond cosplay,
+          diving into the realm of home decor with our unique collection of
+          3D-printed homeware. Each item in our collection is a masterpiece of
+          design, transforming everyday home essentials into personalized art
+          pieces. Our dedication to innovative printing techniques allows us to
+          offer a range of decor items, from intricate light fixtures to bespoke
+          gifts, each infused with a personal touch. This collection not only
+          exemplifies our commitment to quality and creativity but also offers a
+          way to bring a piece of art into the comfort of your home. Whether
+          you're looking for a special gift or a personalised accent to brighten
+          your living space, our 3D-printed homeware collection offers a fusion
+          of functionality and artistic design, elevating your home with a
+          unique, printed charm.
+        </p>
+        <button class="about-button">
+          <a class="custom-text-black" href="{% url 'shop' %}">shopping page</a>
+        </button>
+      </div>
+      <div class="about-box">
+        <p>
+          <img
+            class="about-image"
+            src="/static/images/homeware-3dplant-pot.webp"
+            alt="photo of two 3d printed plant pots which have been spray painted. One is spidermans head the other is gwen, or spiderwoman. Each plant pot has a large spider plant in it."
+          />
+        </p>
+      </div>
     </div>
+  </div>
 </div>
