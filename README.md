@@ -542,20 +542,22 @@ Extensive testing was conducted throughout the development process and can be vi
 | References: | n/a |  
 | Status: | Unresolved |-->
 
+</details>
+
 ---
 
 ## Deployment 🖥️
 
-- Create a new repo on GitHub using the CI template.
-- Create your new app in Heroku.
-- Create an ElephantSQL account.
-- Create a new 'instance'.
-- Select the closest database to use (mine was West of Ireland)
-- Name the instance after your project.
-- A database url is generated which you need to add to Heroku and your env.py file (remember to git.ignore this)
-- Create a cloudinary account.
-- Get the url from your dashboard and add this to your Heroku Config Vars also.
-- You will also need to generate a secret key and add this.
+* Create a new repo on GitHub using the [CI template](https://github.com/Code-Institute-Org/ci-full-template).
+* Create your new app in Heroku.
+* Create an ElephantSQL account.
+*  Create a new 'instance'.
+*  Select the closest database to use (mine was West of Ireland)
+*  Name the instance after your project.
+*  A database url is generated which you need to add to Heroku and your env.py file (remember to git.ignore this)
+*  Create a cloudinary account.
+*  Get the url from your dashboard and add this to your Heroku Config Vars also.
+*  You will also need to generate a secret key and add this.
 * Go to the Resources tab on Heroku and select Heroku Postgres
 * Navigate to the Deploy tab
 * Click on Connect to your Github account and search for your repository.
@@ -569,7 +571,7 @@ If your IDE stops working for some reason.. You will need to clone the repositor
 - Setup a venv with thw command `python3 -m venv venv`
 - Next, run it with `source venv/bin/activate`
 - Install the requirements with `pip3 install -r requirements.txt`
-- 
+
 You will need to create a .gitignore file and add these files to it:
 - env.py
 - venv/
